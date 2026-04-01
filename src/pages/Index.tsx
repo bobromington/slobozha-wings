@@ -166,14 +166,15 @@ export default function Index() {
       {/* Key Directions — full-width */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
         <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div
             className="mr-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6 uppercase">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-8 uppercase">
               {lang === 'ua' ? 'Основні напрямки' : 'Key Directions'}
-            </h3>
+            </h2>
             <ul className="space-y-5">
               {tr.about.directions.map((dir, i) => (
                 <li key={i} className="flex items-center gap-4 text-foreground/90 text-lg">
@@ -186,20 +187,18 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* Recruiting Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={bgFire} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="container relative z-10">
+      <section className="relative h-[420px] md:h-[500px] overflow-hidden">
+        <img src={bgFire} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
           <motion.div
-            className="max-w-2xl"
+            className="mr-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
             <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.recruit.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.recruit.title}</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">{tr.recruit.description}</p>
+            <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.recruit.description}</p>
             <Link to="/vacancies">
               <Button variant="hero" size="lg">{tr.recruit.btn}</Button>
             </Link>
@@ -208,17 +207,17 @@ export default function Index() {
       </section>
 
       {/* Support Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={bgRed} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="container relative z-10 text-center">
+      <section className="relative h-[420px] md:h-[500px] overflow-hidden">
+        <img src={bgRed} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
           <motion.div
+            className="mr-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
             <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.support.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.support.title}</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-8">{tr.support.description}</p>
+            <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.support.description}</p>
             <Link to="/fund">
               <Button variant="hero" size="lg">{tr.support.btn}</Button>
             </Link>
