@@ -186,9 +186,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Recruiting Section — continue without wrapping in container */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-      </section>
 
       {/* Recruiting Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
