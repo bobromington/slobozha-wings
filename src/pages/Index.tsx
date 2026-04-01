@@ -161,24 +161,24 @@ export default function Index() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded">
             <motion.div
-              className="relative rounded overflow-hidden h-72 md:h-96"
+              className="relative h-72 md:h-[420px]"
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
             >
               <img src={bgWhite} alt="БПЛА" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
-              className="flex flex-col justify-center"
+              className="flex flex-col justify-center bg-card p-8 md:p-12"
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
             >
-              <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6 uppercase">
                 {lang === 'ua' ? 'Основні напрямки' : 'Key Directions'}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-5">
                 {tr.about.directions.map((dir, i) => (
-                  <li key={i} className="flex items-center gap-3 text-foreground/80">
-                    <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-4 text-foreground/90 text-lg">
+                    <span className="w-2.5 h-2.5 bg-primary rounded-full flex-shrink-0" />
                     {dir}
                   </li>
                 ))}
