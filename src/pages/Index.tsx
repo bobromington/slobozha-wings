@@ -168,7 +168,7 @@ export default function Index() {
         <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div
-            className="ml-auto w-full md:w-1/2 p-8 md:p-16"
+            className="mr-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
             <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6 uppercase">
