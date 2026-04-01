@@ -212,7 +212,6 @@ export default function Index() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src={bgRed} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/80" />
         </div>
         <div className="container relative z-10 text-center">
           <motion.div
