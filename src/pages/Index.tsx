@@ -169,7 +169,7 @@ export default function Index() {
                 src={samosudov}
                 alt="Тимур Самосудов"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                style={{ objectPosition: 'center calc(0% + 50px)' }}
+                style={{ objectPosition: 'center 15%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
