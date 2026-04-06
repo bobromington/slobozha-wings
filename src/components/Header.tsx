@@ -26,9 +26,7 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <span className="font-heading text-lg md:text-xl font-bold tracking-wider text-foreground">
-            СЛОБОДА
-          </span>
+          <img src={slobodaWide} alt="СЛОБОДА" className="h-5 md:h-6 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
