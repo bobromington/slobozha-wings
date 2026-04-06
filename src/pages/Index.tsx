@@ -157,6 +157,33 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Commander */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container">
+          <Link to="/about" className="group block">
+            <motion.div
+              className="relative rounded overflow-hidden h-[400px] md:h-[500px]"
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            >
+              <img
+                src={samosudov}
+                alt="Тимур Самосудов"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
+                <h3 className="font-heading text-3xl md:text-5xl font-bold text-white mb-2">
+                  {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
+                </h3>
+                <p className="font-heading text-sm md:text-base tracking-widest text-primary uppercase">
+                  {lang === 'ua' ? 'Командир підрозділу' : 'Unit Commander'}
+                </p>
+              </div>
+            </motion.div>
+          </Link>
+        </div>
+      </section>
+
       {/* Key Directions — full-width */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
         <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover brightness-[0.6]" />
