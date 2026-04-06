@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import logo from '@/assets/logo.png';
-import bgFire from '@/assets/bg-fire.png';
-import bgRed from '@/assets/bg-red.png';
-import bgWhite from '@/assets/bg-white.png';
+import bgFire from '@/assets/bg-fire-new.png';
+import bgRed from '@/assets/bg-red-new.png';
+import bgWhite from '@/assets/bg-white-new.png';
 import bgWhite1 from '@/assets/bg-white1.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
 import samosudov from '@/assets/samosudov.png';
@@ -184,10 +184,10 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Key Directions — full-width */}
+      {/* Key Directions — white/drone on right, text on left */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
-        <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover brightness-[0.6]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div
             className="mr-auto w-full md:w-1/2 p-8 md:p-16"
@@ -208,10 +208,10 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Recruiting Section */}
+      {/* Recruiting Section — red/drone on right, text on left */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
-        <img src={bgFire} alt="" className="absolute inset-0 w-full h-full object-cover brightness-[0.6]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <img src={bgRed} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div
             className="mr-auto w-full md:w-1/2 p-8 md:p-16"
@@ -227,13 +227,13 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Support Section */}
+      {/* Support Section — yellow/fire, drone on left, text on right */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
-        <img src={bgRed} alt="" className="absolute inset-0 w-full h-full object-cover brightness-[0.6]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-        <div className="relative z-10 h-full flex items-center">
+        <img src={bgFire} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/50 to-transparent" />
+        <div className="relative z-10 h-full flex items-center justify-end">
           <motion.div
-            className="mr-auto w-full md:w-1/2 p-8 md:p-16"
+            className="ml-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
             <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.support.subtitle}</p>
