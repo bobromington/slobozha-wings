@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
+import slobodaWide from '@/assets/sloboda-wide.png';
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
