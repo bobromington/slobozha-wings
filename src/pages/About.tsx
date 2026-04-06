@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import bgWhite from '@/assets/bg-white.png';
 import bgFire from '@/assets/bg-fire.png';
 import logo from '@/assets/logo.png';
+import samosudov from '@/assets/samosudov.png';
 
 export default function About() {
   const { lang } = useLanguage();
