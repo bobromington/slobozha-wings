@@ -11,6 +11,7 @@ import bgRed from '@/assets/bg-red.png';
 import bgWhite from '@/assets/bg-white.png';
 import bgWhite1 from '@/assets/bg-white1.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
+import samosudov from '@/assets/samosudov.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
