@@ -251,7 +251,7 @@ export default function Index() {
       </section>
 
       {/* News Section */}
-      <section className="py-20 md:py-32>
+      <section className="py-20 md:py-32">
         <div className="container">
           <motion.div
             className="text-center mb-16"
