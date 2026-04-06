@@ -168,7 +168,8 @@ export default function Index() {
               <img
                 src={samosudov}
                 alt="Тимур Самосудов"
-className="absolute inset-0 w-full h-full object-cover object-[center_50px] transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ objectPosition: 'center calc(0% + 50px)' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
