@@ -184,10 +184,10 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Key Directions — full-width */}
+      {/* Key Directions — white/drone on right, text on left */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
-        <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover brightness-[0.6]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div
             className="mr-auto w-full md:w-1/2 p-8 md:p-16"
