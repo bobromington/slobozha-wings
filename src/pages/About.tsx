@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import bgWhite from '@/assets/bg-white.png';
 import bgFire from '@/assets/bg-fire.png';
 import logo from '@/assets/logo.png';
+import samosudov from '@/assets/samosudov.png';
 
 export default function About() {
   const { lang } = useLanguage();
@@ -70,6 +71,66 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Commander Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src={samosudov}
+              alt="Тимур Самосудов"
+              className="w-full max-w-md mx-auto rounded"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-2">
+              {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
+            </h2>
+            <p className="text-primary font-heading text-sm tracking-widest uppercase mb-6">
+              {lang === 'ua'
+                ? 'Командир підрозділу'
+                : 'Unit Commander'}
+            </p>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                {lang === 'ua'
+                  ? 'Тимур Самосудов — командир підрозділу ударних безпілотних систем спеціального призначення Національної гвардії України.'
+                  : 'Tymur Samosudov is the commander of the special-purpose strike unmanned systems unit of the National Guard of Ukraine.'}
+              </p>
+              <p>
+                {lang === 'ua'
+                  ? 'З початком повномасштабного вторгнення у березні 2022 року він добровільно став до строю. Свій бойовий шлях розпочав із базових завдань — працював водієм, забезпечуючи підрозділ на передовій, і паралельно шукав можливості бути максимально ефективним у бойових умовах.'
+                  : 'When the full-scale invasion began in March 2022, he voluntarily enlisted. He started with basic tasks — working as a driver supporting the unit on the front line, while looking for ways to be maximally effective in combat.'}
+              </p>
+              <p>
+                {lang === 'ua'
+                  ? 'Згодом перейшов до роботи з безпілотними системами та став одним із тих, хто фактично з нуля формував напрямок ударних дронів. Завдяки практичному досвіду, ініціативі та здатності швидко ухвалювати рішення, Самосудов очолив підрозділ, який сьогодні виконує завдання на найскладніших ділянках фронту.'
+                  : 'He later transitioned to working with unmanned systems and became one of those who built the strike drone capability from scratch. Through practical experience, initiative, and quick decision-making, Samosudov took command of a unit that now operates on the most challenging frontline sectors.'}
+              </p>
+              <p>
+                {lang === 'ua'
+                  ? 'Під його керівництвом команда спеціалізується на точковому знищенні техніки та живої сили противника. Підрозділ демонструє високу результативність, поєднуючи технологічність, дисципліну та постійну адаптацію до умов сучасної війни.'
+                  : 'Under his leadership, the team specializes in precision strikes against enemy equipment and personnel, combining technology, discipline, and constant adaptation to modern warfare.'}
+              </p>
+              <p>
+                {lang === 'ua'
+                  ? 'Його підхід — це особиста залученість, відповідальність за результат і робота пліч-о-пліч із бійцями.'
+                  : 'His approach is personal involvement, accountability for results, and working shoulder to shoulder with his soldiers.'}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
