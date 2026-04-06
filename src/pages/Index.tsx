@@ -161,7 +161,7 @@ export default function Index() {
       </section>
 
       {/* Commander */}
-      <section className="py-20 md:py-32 bg-background/20 backdrop-blur-sm">
+      <section className="py-20 md:py-32 backdrop-blur-[3.6px]" style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.2) 60px)' }}>
         <div className="container">
           <Link to="/about" className="group block">
             <motion.div
