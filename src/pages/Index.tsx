@@ -50,17 +50,20 @@ export default function Index() {
   const tr = t(lang);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      {/* Fixed video background */}
+      <video
+        autoPlay muted loop playsInline
+        className="fixed inset-0 w-full h-full object-cover z-0"
+        src="/video/hero-bg.mov"
+      />
+      <div className="fixed inset-0 z-0 bg-black/60" />
+
+      <div className="relative z-10">
       <Header />
 
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <video
-          autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/video/hero-bg.mov"
-        />
-        <div className="absolute inset-0" style={{ background: 'var(--hero-overlay)' }} />
         
         <div className="relative z-10 text-center px-4">
           <motion.img
