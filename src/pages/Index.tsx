@@ -65,13 +65,13 @@ export default function Index() {
           <motion.img
             src={logo}
             alt="Слобода"
-            className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-6"
+            className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           />
           <motion.p
-            className="font-heading text-sm md:text-base tracking-[0.3em] text-primary mb-2"
+            className="font-heading text-sm md:text-base tracking-[0.3em] text-primary mb-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -81,32 +81,24 @@ export default function Index() {
           <motion.img
             src={slobodaWide}
             alt="СЛОБОДА"
-            className="max-w-[90%] md:max-w-2xl lg:max-w-3xl h-auto mx-auto mb-2"
+            className="max-w-[85%] md:max-w-xl lg:max-w-2xl h-auto mx-auto mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           />
           <motion.p
-            className="font-heading text-xs md:text-sm tracking-[0.4em] text-muted-foreground mb-6"
+            className="font-heading text-xs md:text-sm tracking-[0.4em] text-muted-foreground mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
             {tr.hero.brigade}
           </motion.p>
-          <motion.p
-            className="text-base md:text-lg text-foreground/80 max-w-xl mx-auto mb-10 font-body"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-          >
-            {tr.hero.description}
-          </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
           >
             <Link to="/vacancies">
               <Button variant="hero" size="xl">{tr.hero.joinBtn}</Button>
