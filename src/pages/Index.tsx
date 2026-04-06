@@ -10,6 +10,7 @@ import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
 import bgWhite from '@/assets/bg-white.png';
 import bgWhite1 from '@/assets/bg-white1.png';
+import slobodaWide from '@/assets/sloboda-wide.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -77,14 +78,14 @@ export default function Index() {
           >
             {tr.hero.subtitle}
           </motion.p>
-          <motion.h1
-            className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-foreground mb-2"
+          <motion.img
+            src={slobodaWide}
+            alt="СЛОБОДА"
+            className="max-w-[90%] md:max-w-2xl lg:max-w-3xl h-auto mx-auto mb-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            {tr.hero.title}
-          </motion.h1>
+          />
           <motion.p
             className="font-heading text-xs md:text-sm tracking-[0.4em] text-muted-foreground mb-6"
             initial={{ opacity: 0 }}
