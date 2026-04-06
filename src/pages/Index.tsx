@@ -10,6 +10,7 @@ import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
 import bgWhite from '@/assets/bg-white.png';
 import bgWhite1 from '@/assets/bg-white1.png';
+import slobodaWide from '@/assets/sloboda-wide.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
