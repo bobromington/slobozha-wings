@@ -161,7 +161,7 @@ export default function Index() {
       </section>
 
       {/* Commander */}
-      <section className="py-20 md:py-32>
+      <section className="py-20 md:py-32">
         <div className="container">
           <Link to="/about" className="group block">
             <motion.div
