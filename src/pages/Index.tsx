@@ -126,7 +126,7 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 md:py-32 backdrop-blur-[3.6px]" style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.2) 120px, hsl(var(--background) / 0.2) calc(100% - 120px), transparent)' }}>
+      <section className="py-20 md:py-32>
         <div className="container">
           <motion.div
             className="text-center mb-16"
@@ -161,7 +161,7 @@ export default function Index() {
       </section>
 
       {/* Commander */}
-      <section className="py-20 md:py-32 backdrop-blur-[3.6px]" style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.2) 120px, hsl(var(--background) / 0.2) calc(100% - 120px), transparent)' }}>
+      <section className="py-20 md:py-32>
         <div className="container">
           <Link to="/about" className="group block">
             <motion.div
@@ -251,7 +251,7 @@ export default function Index() {
       </section>
 
       {/* News Section */}
-      <section className="py-20 md:py-32 backdrop-blur-[3.6px]" style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.2) 120px, hsl(var(--background) / 0.2) calc(100% - 120px), transparent)' }}>
+      <section className="py-20 md:py-32>
         <div className="container">
           <motion.div
             className="text-center mb-16"
