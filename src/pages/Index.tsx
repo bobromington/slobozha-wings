@@ -126,7 +126,7 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 md:py-32 bg-background/85 backdrop-blur-sm">
+      <section className="py-20 md:py-32 bg-background/20 backdrop-blur-sm">
         <div className="container">
           <motion.div
             className="text-center mb-16"
@@ -161,7 +161,7 @@ export default function Index() {
       </section>
 
       {/* Commander */}
-      <section className="py-20 md:py-32 bg-background/85 backdrop-blur-sm">
+      <section className="py-20 md:py-32 bg-background/20 backdrop-blur-sm">
         <div className="container">
           <Link to="/about" className="group block">
             <motion.div
@@ -251,7 +251,7 @@ export default function Index() {
       </section>
 
       {/* News Section */}
-      <section className="py-20 md:py-32 bg-background/85 backdrop-blur-sm">
+      <section className="py-20 md:py-32 bg-background/20 backdrop-blur-sm">
         <div className="container">
           <motion.div
             className="text-center mb-16"
