@@ -37,8 +37,8 @@ export default function About() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {lang === 'ua'
-                ? 'Батальйон безпілотних систем «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів БПЛА.'
-                : 'The Unmanned Systems Battalion "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective UAV units.'}
+                ? 'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.'
+                : 'Airspace Cover Detachment "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective units.'}
             </p>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
               {lang === 'ua' ? 'Місія' : 'Mission'}

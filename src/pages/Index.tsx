@@ -12,6 +12,7 @@ import bgWhite from '@/assets/bg-white-new.png';
 import bgWhite1 from '@/assets/bg-white1.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
 import samosudov from '@/assets/samosudov.png';
+import samosudTeam from '@/assets/samosud-team.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -85,10 +86,18 @@ export default function Index() {
           <motion.img
             src={slobodaWide}
             alt="СЛОБОДА"
-            className="max-w-[85%] md:max-w-xl lg:max-w-2xl h-auto mx-auto mb-3"
+            className="max-w-[85%] md:max-w-xl lg:max-w-2xl h-auto mx-auto mb-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
+          />
+          <motion.img
+            src={samosudTeam}
+            alt="Samosud Team"
+            className="max-w-[50%] md:max-w-xs lg:max-w-sm h-auto mx-auto mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
           />
           <motion.p
             className="font-heading text-xs md:text-sm tracking-[0.4em] text-muted-foreground mb-10"
