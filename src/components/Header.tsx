@@ -27,9 +27,9 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <div className="flex flex-col gap-0.5">
-            <img src={slobodaWide} alt="СЛОБОДА" className="h-5 md:h-6 w-auto" />
-            <img src={samosudTeam} alt="Samosud Team" className="h-2.5 md:h-3 w-auto brightness-[2]" />
+          <div className="flex flex-col gap-1">
+            <img src={slobodaWide} alt="СЛОБОДА" className="block shrink-0 h-7 md:h-8 w-auto" />
+            <img src={samosudTeam} alt="Samosud Team" className="block shrink-0 h-3.5 md:h-4 w-auto" />
           </div>
         </Link>
 
