@@ -27,7 +27,7 @@ export default function Footer() {
               <img src={logo} alt="Слобода" className="h-12 w-auto" />
               <div className="flex flex-col gap-1">
                 <img src={slobodaWide} alt="СЛОБОДА" className="h-5 w-auto" />
-                <img src={samosudTeam} alt="Samosud Team" className="h-3 w-auto" />
+                <img src={samosudTeam} alt="Samosud Team" className="h-3 w-auto brightness-[2]" />
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
