@@ -23,7 +23,7 @@ export default function About() {
             className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4"
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           >
-            {lang === 'ua' ? 'Про батальйон' : 'About the Battalion'}
+            {lang === 'ua' ? 'Про загін' : 'About the Detachment'}
           </motion.h1>
         </div>
       </section>
@@ -37,8 +37,8 @@ export default function About() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {lang === 'ua'
-                ? 'Батальйон безпілотних систем «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів БПЛА.'
-                : 'The Unmanned Systems Battalion "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective UAV units.'}
+                ? 'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.'
+                : 'Airspace Cover Detachment "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective units.'}
             </p>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
               {lang === 'ua' ? 'Місія' : 'Mission'}
@@ -103,8 +103,8 @@ export default function About() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 {lang === 'ua'
-                  ? 'Тимур Самосудов — командир підрозділу ударних безпілотних систем спеціального призначення Національної гвардії України.'
-                  : 'Tymur Samosudov is the commander of the special-purpose strike unmanned systems unit of the National Guard of Ukraine.'}
+                  ? 'Тимур Самосудов — командир загону прикриття повітряного простору спеціального призначення Національної гвардії України.'
+                  : 'Tymur Samosudov is the commander of the special-purpose airspace cover detachment of the National Guard of Ukraine.'}
               </p>
               <p>
                 {lang === 'ua'

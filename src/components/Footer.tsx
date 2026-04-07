@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
+import slobodaWide from '@/assets/sloboda-wide.png';
+import samosudTeam from '@/assets/samosud-team.png';
 
 const socialLinks = [
   { name: 'Instagram', url: '#', icon: 'IG' },
@@ -21,12 +23,15 @@ export default function Footer() {
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-2">
               <img src={logo} alt="Слобода" className="h-12 w-auto" />
-              <span className="font-heading text-lg font-bold tracking-wider text-foreground">СЛОБОДА</span>
+              <div className="flex flex-col gap-1">
+                <img src={slobodaWide} alt="СЛОБОДА" className="h-5 w-auto" />
+                <img src={samosudTeam} alt="Samosud Team" className="h-3 w-auto" />
+              </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {lang === 'ua' ? 'Батальйон безпілотних систем. 11 Бригада НГУ.' : 'Unmanned Systems Battalion. 11th Brigade NGU.'}
+              {lang === 'ua' ? 'Загін прикриття повітряного простору. 11 Бригада НГУ.' : 'Airspace Cover Detachment. 11th Brigade NGU.'}
             </p>
           </div>
 
