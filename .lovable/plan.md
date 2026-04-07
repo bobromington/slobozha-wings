@@ -1,12 +1,26 @@
 
+Do I know what the issue is? Yes.
 
-## Make section backgrounds 20% opaque
+Что именно не так
+- Сами исходники нормальные: `src/assets/sloboda-wide.png` и `src/assets/samosud-team.png` выглядят чисто, значит проблема не в файлах.
+- Размытие появляется именно в левом верхнем блоке хедера, в `src/components/Header.tsx`.
+- Сейчас там логотипы отрисовываются слишком мелко:
+  - `СЛОБОДА` — `h-5 md:h-6`
+  - `Samosud Team` — `h-2.5 md:h-3`
+- Для `Samosud Team` еще добавлен `brightness-[2]`, а CSS filter на маленьком PNG дополнительно смягчает тонкие линии и делает текст “мыльным”.
 
-Change `bg-background/85` to `bg-background/20` on three sections in `src/pages/Index.tsx`:
+План исправления
+1. Править только `src/components/Header.tsx`, не трогая футер и главную — пользователь просил исправление только в левом верхнем углу.
+2. Убрать `brightness-[2]` у `samosudTeam`.
+3. Сделать оба текстовых логотипа в хедере крупнее и стабильнее по рендерингу:
+   - увеличить отображаемый размер,
+   - использовать `block` и `shrink-0`,
+   - уйти от слишком маленьких высот, из-за которых PNG сильно даунскейлится.
+4. Если понадобится, слегка скорректировать высоту хедера или расстояния внутри логоблока, чтобы все осталось аккуратно выровнено.
+5. Проверить результат на desktop и mobile: логотип должен быть четким, а `Samosud Team` — читаемым без размытия.
 
-1. **About Section** (line 129) — `bg-background/85` → `bg-background/20`
-2. **Commander Section** (line 164) — `bg-background/85` → `bg-background/20`
-3. **News Section** (line 254) — `bg-background/85` → `bg-background/20`
-
-This makes these sections nearly transparent, showing more of the background video through.
-
+Технические детали
+- Основной файл: `src/components/Header.tsx`
+- Файлы для сверки, но не для изменения в этом запросе: `src/components/Footer.tsx`, `src/pages/Index.tsx`
+- Причина проблемы: слишком сильное уменьшение растровых PNG в хедере + filter на маленьком изображении.
+- Если после этих правок четкости все равно будет недостаточно, лучший следующий шаг — заменить header-only версии на SVG или на отдельный более крупный lockup специально для шапки.
