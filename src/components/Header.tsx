@@ -24,10 +24,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container flex items-end justify-between h-16 md:h-20 pb-2 md:pb-3">
-        <Link to="/" className="flex items-end gap-3">
+      <div className="container flex items-center justify-between h-16 md:h-20">
+        <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <div className="flex flex-col gap-0.5">
+          <div className="flex flex-col gap-0.5 translate-y-1 md:translate-y-1.5">
             <img src={slobodaWide} alt="СЛОБОДА" className="block shrink-0 h-5 md:h-6 w-auto" />
             <img src={samosudTeam} alt="Samosud Team" className="block shrink-0 w-20 md:w-24 h-auto" />
           </div>
