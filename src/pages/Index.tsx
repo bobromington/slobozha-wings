@@ -94,7 +94,7 @@ export default function Index() {
           <motion.img
             src={samosudTeam}
             alt="Samosud Team"
-            className="max-w-[50%] md:max-w-xs lg:max-w-sm h-auto mx-auto mb-3 brightness-[2]"
+            className="max-w-[50%] md:max-w-xs lg:max-w-sm h-auto mx-auto mb-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
