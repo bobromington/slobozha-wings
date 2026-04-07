@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       home: 'Головна',
       vacancies: 'Вакансії',
-      about: 'Про батальйон',
+      about: 'Про загін',
       fund: 'Благодійний фонд',
       news: 'Новини',
       blog: 'Блог',
@@ -15,11 +15,11 @@ export const translations = {
       title: 'СЛОБОДА',
       brigade: '11 БРИГАДА НГУ',
       description: 'Ми формуємо майбутнє поля бою. Технології, точність, перемога.',
-      joinBtn: 'Стати частиною батальйону',
+      joinBtn: 'Стати частиною загону',
       supportBtn: 'Підтримати',
     },
     about: {
-      title: 'Про батальйон',
+      title: 'Про загін',
       subtitle: 'СИЛА В ТЕХНОЛОГІЯХ',
       description: 'Загін прикриття повітряного простору «Слобода» — це високотехнологічний підрозділ, що спеціалізується на розвідці, ураженні та аналітиці за допомогою БПЛА.',
       facts: [
@@ -82,11 +82,11 @@ export const translations = {
       title: 'SLOBODA',
       brigade: '11TH BRIGADE NGU',
       description: 'We shape the future of the battlefield. Technology, precision, victory.',
-      joinBtn: 'Join the Battalion',
+      joinBtn: 'Join the Detachment',
       supportBtn: 'Support Us',
     },
     about: {
-      title: 'About the Battalion',
+      title: 'About the Detachment',
       subtitle: 'STRENGTH IN TECHNOLOGY',
       description: 'Airspace Cover Detachment "Sloboda" is a high-tech unit specializing in reconnaissance, strike operations, and analytics using UAVs.',
       facts: [
