@@ -3,9 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
-import logo from '@/assets/logo.png';
-import slobodaWide from '@/assets/sloboda-wide.png';
-import samosudTeam from '@/assets/samosud-team.png';
+import headerBrand from '@/assets/header-brand.png';
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
@@ -25,12 +23,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <div className="flex flex-col gap-0.5">
-            <img src={slobodaWide} alt="СЛОБОДА" className="h-5 md:h-6 w-auto" />
-            <img src={samosudTeam} alt="Samosud Team" className="h-2.5 md:h-3 w-auto brightness-[2]" />
-          </div>
+        <Link to="/" className="flex items-center">
+          <img src={headerBrand} alt="Слобода — Samosud Team" className="h-10 md:h-14 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
