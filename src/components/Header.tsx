@@ -5,7 +5,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
-import samosudTeam from '@/assets/samosud-team-header.png';
+import samosudTeam from '@/assets/samosud-team-wide.png';
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
