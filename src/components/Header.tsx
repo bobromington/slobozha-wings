@@ -5,7 +5,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
-import samosudTeam from '@/assets/samosud-team-header.png';
+import samosudTeam from '@/assets/samosud-team-wide.png';
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
@@ -27,9 +27,9 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <div className="flex flex-col gap-0.5 translate-y-1 md:translate-y-1.5">
-            <img src={slobodaWide} alt="СЛОБОДА" className="block shrink-0 h-5 md:h-6 w-auto" />
-            <img src={samosudTeam} alt="Samosud Team" className="block shrink-0 w-20 md:w-24 h-auto" />
+          <div className="flex flex-col gap-0.5 translate-y-1 md:translate-y-1.5 w-28 md:w-36">
+            <img src={slobodaWide} alt="СЛОБОДА" className="block w-full h-auto" />
+            <img src={samosudTeam} alt="Samosud Team" className="block w-full h-auto" />
           </div>
         </Link>
 
