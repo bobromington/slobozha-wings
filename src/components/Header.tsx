@@ -29,7 +29,7 @@ export default function Header() {
           <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
           <div className="flex flex-col gap-0.5 translate-y-1 md:translate-y-1.5 w-28 md:w-36">
             <img src={slobodaWide} alt="СЛОБОДА" className="block w-full h-auto" />
-            <img src={samosudTeam} alt="Samosud Team" className="block w-full h-auto" />
+            <img src={samosudTeam} alt="Samosud Team" className="block w-[92%] h-auto mx-auto" />
           </div>
         </Link>
 
