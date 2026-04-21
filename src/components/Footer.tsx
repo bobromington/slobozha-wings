@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
-import slobodaWide from '@/assets/sloboda-wide.png';
-import samosudTeam from '@/assets/samosud-team.png';
+import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
 
 const socialLinks = [
   { name: 'Instagram', url: '#', icon: 'IG' },
@@ -25,10 +24,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-2">
               <img src={logo} alt="Слобода" className="h-12 w-auto" />
-              <div className="flex flex-col gap-1">
-                <img src={slobodaWide} alt="СЛОБОДА" className="h-5 w-auto" />
-                <img src={samosudTeam} alt="Samosud Team" className="h-3 w-auto" />
-              </div>
+              <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {lang === 'ua' ? 'Загін прикриття повітряного простору. 11 Бригада НГУ.' : 'Airspace Cover Detachment. 11th Brigade NGU.'}
