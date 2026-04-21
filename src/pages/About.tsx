@@ -22,7 +22,7 @@ export default function About() {
         <Header />
 
         {/* Hero */}
-        <section className="relative min-h-[60vh] flex items-end pt-32 pb-16">
+        <section className="relative pt-32 pb-10">
           <div className="container">
             <motion.p
               className="font-heading text-sm tracking-[0.3em] text-primary mb-3"
@@ -40,25 +40,25 @@ export default function About() {
         </section>
 
         {/* History & Mission */}
-        <section className="py-16 md:py-24">
-          <div className="container max-w-6xl">
-            {/* History — large editorial block */}
+        <section className="py-10 md:py-16">
+          <div className="container max-w-6xl space-y-8 md:space-y-10">
+            {/* History — red plate */}
             <motion.div
-              className="relative mb-16 md:mb-24"
+              className="relative bg-primary text-primary-foreground rounded-lg p-8 md:p-12 shadow-[0_20px_60px_-15px_hsla(0,72%,51%,0.5)] overflow-hidden"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-4 flex md:flex-col items-center md:items-start gap-6">
-                  <img src={logo} alt="Слобода" className="w-28 h-28 md:w-40 md:h-40" />
+                  <img src={logo} alt="Слобода" className="w-24 h-24 md:w-36 md:h-36 brightness-0 invert" />
                   <div>
-                    <p className="font-heading text-xs tracking-[0.3em] text-primary mb-2">01</p>
-                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground uppercase leading-tight">
+                    <p className="font-heading text-xs tracking-[0.3em] text-primary-foreground/70 mb-2">01</p>
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase leading-tight">
                       {lang === 'ua' ? 'Історія створення' : 'History'}
                     </h2>
                   </div>
                 </div>
-                <div className="md:col-span-8 md:border-l md:border-border/40 md:pl-10">
-                  <p className="text-muted-foreground leading-relaxed text-lg">
+                <div className="md:col-span-8 md:border-l md:border-primary-foreground/30 md:pl-10">
+                  <p className="leading-relaxed text-lg text-primary-foreground/95">
                     {lang === 'ua'
                       ? 'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.'
                       : 'Airspace Cover Detachment "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective units.'}
@@ -67,17 +67,17 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Mission — featured statement */}
+            {/* Mission — red featured statement */}
             <motion.div
-              className="relative bg-card/60 backdrop-blur-xl border border-border/50 rounded-lg p-10 md:p-16 overflow-hidden"
+              className="relative bg-primary text-primary-foreground rounded-lg p-10 md:p-16 shadow-[0_20px_60px_-15px_hsla(0,72%,51%,0.5)] overflow-hidden"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             >
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-              <p className="font-heading text-xs tracking-[0.3em] text-primary mb-3">02</p>
-              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground uppercase mb-6">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-foreground/40" />
+              <p className="font-heading text-xs tracking-[0.3em] text-primary-foreground/70 mb-3">02</p>
+              <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase mb-6">
                 {lang === 'ua' ? 'Місія' : 'Mission'}
               </h2>
-              <p className="text-foreground/90 leading-relaxed text-xl md:text-2xl font-light max-w-4xl">
+              <p className="leading-relaxed text-xl md:text-2xl font-light max-w-4xl text-primary-foreground/95">
                 {lang === 'ua'
                   ? 'Забезпечення технологічної переваги на полі бою шляхом ефективного використання безпілотних авіаційних систем для розвідки, ураження та захисту.'
                   : 'Ensuring technological superiority on the battlefield through effective use of unmanned aerial systems for reconnaissance, strike operations, and defense.'}
