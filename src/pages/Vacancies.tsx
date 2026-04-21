@@ -30,10 +30,17 @@ export default function Vacancies() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <section className="relative pt-32 pb-16">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={bgWhite1} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-background/90" />
+          <video
+            src="/video/vacancies-bg.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/70" />
         </div>
         <div className="container relative z-10">
           <motion.h1
