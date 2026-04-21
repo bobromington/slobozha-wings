@@ -39,50 +39,49 @@ export default function About() {
           </div>
         </section>
 
-        {/* Mission & Principles */}
+        {/* History & Mission */}
         <section className="py-16 md:py-24">
-          <div className="container grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="container max-w-6xl">
+            {/* History — large editorial block */}
             <motion.div
-              className="bg-card/70 backdrop-blur-md border border-border/50 rounded p-8"
-              initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              className="relative mb-16 md:mb-24"
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             >
-              <img src={logo} alt="Слобода" className="w-32 h-32 mb-6" />
-              <h2 className="font-heading text-3xl font-bold text-foreground mb-4 uppercase">
-                {lang === 'ua' ? 'Історія створення' : 'History'}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {lang === 'ua'
-                  ? 'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.'
-                  : 'Airspace Cover Detachment "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective units.'}
-              </p>
-              <h2 className="font-heading text-3xl font-bold text-foreground mb-4 uppercase">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div className="md:col-span-4 flex md:flex-col items-center md:items-start gap-6">
+                  <img src={logo} alt="Слобода" className="w-28 h-28 md:w-40 md:h-40" />
+                  <div>
+                    <p className="font-heading text-xs tracking-[0.3em] text-primary mb-2">01</p>
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground uppercase leading-tight">
+                      {lang === 'ua' ? 'Історія створення' : 'History'}
+                    </h2>
+                  </div>
+                </div>
+                <div className="md:col-span-8 md:border-l md:border-border/40 md:pl-10">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    {lang === 'ua'
+                      ? 'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.'
+                      : 'Airspace Cover Detachment "Sloboda" was created in response to the need for modern technological solutions on the battlefield. The unit joined the 11th Brigade of the National Guard of Ukraine and quickly became one of the most effective units.'}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mission — featured statement */}
+            <motion.div
+              className="relative bg-card/60 backdrop-blur-xl border border-border/50 rounded-lg p-10 md:p-16 overflow-hidden"
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
+            >
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+              <p className="font-heading text-xs tracking-[0.3em] text-primary mb-3">02</p>
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground uppercase mb-6">
                 {lang === 'ua' ? 'Місія' : 'Mission'}
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/90 leading-relaxed text-xl md:text-2xl font-light max-w-4xl">
                 {lang === 'ua'
                   ? 'Забезпечення технологічної переваги на полі бою шляхом ефективного використання безпілотних авіаційних систем для розвідки, ураження та захисту.'
                   : 'Ensuring technological superiority on the battlefield through effective use of unmanned aerial systems for reconnaissance, strike operations, and defense.'}
               </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-card/70 backdrop-blur-md border border-border/50 rounded p-8"
-              initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-            >
-              <h2 className="font-heading text-3xl font-bold text-foreground mb-6 uppercase">
-                {lang === 'ua' ? 'Принципи роботи' : 'Operating Principles'}
-              </h2>
-              <ul className="space-y-4 text-muted-foreground text-lg">
-                {(lang === 'ua'
-                  ? ['Технологічна перевага', 'Точність та ефективність', 'Постійний розвиток', 'Командна робота', 'Захист життів']
-                  : ['Technological superiority', 'Precision & efficiency', 'Continuous development', 'Teamwork', 'Protecting lives']
-                ).map((p, i) => (
-                  <li key={i} className="flex items-center gap-4">
-                    <span className="w-2.5 h-2.5 bg-primary rounded-full flex-shrink-0" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           </div>
         </section>
