@@ -184,6 +184,17 @@ export default function Index() {
                 style={{ objectPosition: '70% 15%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              {/* Right-side frosted glass gradient */}
+              <div
+                className="absolute inset-y-0 right-0 w-1/2 md:w-2/5 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(to left, hsl(var(--background) / 0.45), transparent)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  maskImage: 'linear-gradient(to left, black, transparent)',
+                  WebkitMaskImage: 'linear-gradient(to left, black, transparent)',
+                }}
+              />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
                 <h3 className="font-heading text-3xl md:text-5xl font-bold text-white mb-2">
                   {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
