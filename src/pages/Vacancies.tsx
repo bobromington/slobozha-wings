@@ -40,7 +40,7 @@ export default function Vacancies() {
         <Header />
 
         {/* Hero */}
-        <section className="relative min-h-[60vh] flex items-end pt-32 pb-16">
+        <section className="relative pt-32 pb-10">
           <div className="container">
             <motion.p
               className="font-heading text-sm tracking-[0.3em] text-primary mb-3"
@@ -49,16 +49,25 @@ export default function Vacancies() {
               {lang === 'ua' ? 'ПРИЄДНУЙСЯ ДО НАС' : 'JOIN US'}
             </motion.p>
             <motion.h1
-              className="font-heading text-5xl md:text-7xl font-bold text-foreground"
+              className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6"
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             >
               {tr.vacancies.title}
             </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <Button variant="hero" size="lg" asChild>
+                <a href="#application-form">
+                  {lang === 'ua' ? 'Заповнити анкету' : 'Fill out application'}
+                </a>
+              </Button>
+            </motion.div>
           </div>
         </section>
 
         {/* Vacancies list */}
-        <section className="py-16 md:py-24">
+        <section className="py-10 md:py-16">
           <div className="container space-y-6">
             {data.map((cat, ci) => (
               <motion.div
