@@ -30,8 +30,7 @@ export default function Vacancies() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <section className="relative overflow-hidden bg-background">
-        <Header />
+      <section className="relative overflow-hidden bg-background pt-20">
         <div className="relative w-full">
           <video
             src="/video/vacancies-bg.mov"
