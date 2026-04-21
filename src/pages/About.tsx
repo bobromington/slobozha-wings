@@ -49,8 +49,8 @@ export default function About() {
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-4 flex md:flex-col items-center md:items-start gap-6">
-                  <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-primary-foreground flex items-center justify-center shadow-lg shrink-0">
-                    <img src={logo} alt="Слобода" className="w-20 h-20 md:w-28 md:h-28 object-contain" />
+                  <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-primary-foreground overflow-hidden shadow-lg shrink-0">
+                    <img src={logo} alt="Слобода" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-heading text-xs tracking-[0.3em] text-primary-foreground/70 mb-2">01</p>
