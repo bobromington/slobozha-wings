@@ -47,9 +47,11 @@ export default function About() {
               className="relative bg-primary text-primary-foreground rounded-lg p-8 md:p-12 shadow-[0_20px_60px_-15px_hsla(0,72%,51%,0.5)] overflow-hidden"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-4 flex md:flex-col items-center md:items-start gap-6">
-                  <img src={logo} alt="Слобода" className="w-24 h-24 md:w-36 md:h-36 brightness-0 invert" />
+                  <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-primary-foreground flex items-center justify-center shadow-lg shrink-0">
+                    <img src={logo} alt="Слобода" className="w-20 h-20 md:w-28 md:h-28 object-contain" />
+                  </div>
                   <div>
                     <p className="font-heading text-xs tracking-[0.3em] text-primary-foreground/70 mb-2">01</p>
                     <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase leading-tight">
