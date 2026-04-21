@@ -184,15 +184,16 @@ export default function Index() {
                 style={{ objectPosition: '70% 15%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              {/* Right-side frosted glass gradient */}
+              {/* Left-side Apple-style frosted glass */}
               <div
-                className="absolute inset-y-0 right-0 w-1/2 md:w-2/5 pointer-events-none"
+                className="absolute inset-y-0 left-0 w-1/2 md:w-2/5 pointer-events-none"
                 style={{
-                  background: 'linear-gradient(to left, hsl(var(--background) / 0.45), transparent)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  maskImage: 'linear-gradient(to left, black, transparent)',
-                  WebkitMaskImage: 'linear-gradient(to left, black, transparent)',
+                  background: 'linear-gradient(to right, hsl(0 0% 100% / 0.08), transparent)',
+                  backdropFilter: 'blur(24px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                  maskImage: 'linear-gradient(to right, black 40%, transparent)',
+                  WebkitMaskImage: 'linear-gradient(to right, black 40%, transparent)',
+                  borderRight: '1px solid hsl(0 0% 100% / 0.08)',
                 }}
               />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
