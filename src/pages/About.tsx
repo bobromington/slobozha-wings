@@ -32,6 +32,8 @@ export default function About() {
           >
             {lang === 'ua' ? 'Про загін' : 'About the Detachment'}
           </motion.h1>
+            </div>
+          </div>
         </div>
       </section>
 
