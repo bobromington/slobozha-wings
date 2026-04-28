@@ -14,8 +14,9 @@ export default function About() {
       <video
         autoPlay muted loop playsInline
         className="fixed inset-0 w-full h-full object-cover z-0"
-        src="/video/about-bg.mov"
-      />
+      >
+        <source src="/video/about-bg.mp4" type="video/mp4" />
+      </video>
       <div className="fixed inset-0 z-0 bg-black/60" />
 
       <div className="relative z-10">
