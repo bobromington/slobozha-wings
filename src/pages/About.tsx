@@ -17,7 +17,7 @@ export default function About() {
       >
         <source src="/video/about-bg.mp4" type="video/mp4" />
       </video>
-      <div className="fixed inset-0 z-0 bg-black/60" />
+      
 
       <div className="relative z-10">
         <Header />
