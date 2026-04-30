@@ -1,19 +1,38 @@
+## План изменений в `src/pages/About.tsx`
 
+### 1. Перенести блок «Командир» наверх
+Переместить секцию с Тимуром Самосудовым так, чтобы она шла **первой** после Hero-заголовка «Про загін», перед блоком «Історія створення» (01).
 
-## Plan: Replace Samosud Team image in header
+### 2. Вставить полный текст в «Історія створення»
+Заменить короткий абзац на развёрнутый текст пользователя (~14 абзацев), разбитый на смысловые подразделы:
+- Вступление
+- Перший етап: взвод ППО
+- Розширення: рота ППО
+- Новий етап (2025): дрони-перехоплювачі
+- Створення загону
+- Підготовка та результати
+- Сьогодення та розвиток
 
-### What
-Replace the current `samosud-team-header.png` with the uploaded `SAMOSUD_TEAM_WIDE.png` and make its width match the "СЛОБОДА" logo above it.
+Английская версия останется кратким текущим абзацем.
 
-### Steps
+### 3. Удалить блок «Місія» (02)
+Полностью убрать секцию с заголовком «Місія / Mission».
 
-1. **Copy the uploaded image** to `src/assets/samosud-team-wide.png`
+### 4. Унифицировать ширину плашек
+Все плашки (Командир, Історія) обернуть в `container max-w-6xl` и привести к единому стилю:
+- `rounded-lg`
+- `border border-border`
+- `bg-background/85 backdrop-blur-md`
+- тень `shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]`
+- красная вертикальная полоса слева (`bg-primary`)
 
-2. **Update `src/components/Header.tsx`**:
-   - Change the import from `samosud-team-header.png` to `samosud-team-wide.png`
-   - Remove the fixed width classes (`w-20 md:w-24`) from the Samosud Team `<img>`
-   - Instead, make both images share the same width by setting the "СЛОБОДА" image with a specific width and making the Samosud Team image match it — e.g., both use `w-full` inside a container with a fixed width, or both use the same explicit width class like `w-28 md:w-36`
+Итоговый порядок страницы:
+```
+Hero «Про загін»
+└─ Плашка: Командир (фото + биография)
+└─ Плашка 01: Історія створення (полный текст)
+Footer
+```
 
-### Technical detail
-The "СЛОБОДА" image currently uses `h-5 md:h-6 w-auto`, so its rendered width depends on the image aspect ratio. To ensure both match, we'll wrap both in a container with a fixed width and set both images to `w-full h-auto`.
-
+### Затронутый файл
+- `src/pages/About.tsx`
