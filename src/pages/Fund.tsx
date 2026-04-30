@@ -57,6 +57,7 @@ export default function Fund() {
                 <p>IBAN: UA00 0000 0000 0000 0000 0000 00000</p>
                 <p>{lang === 'ua' ? 'Отримувач' : 'Recipient'}: БФ «Слобода»</p>
                 <p>ЄДРПОУ: 00000000</p>
+                <p>{lang === 'ua' ? 'Картка' : 'Card'}: 5375 4112 2192 1567</p>
               </div>
             </div>
 
