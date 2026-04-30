@@ -79,7 +79,7 @@ export default function About() {
                   />
                 </div>
                 <div>
-                  <p className="font-heading text-xs tracking-[0.3em] text-primary mb-2">КОМАНДИР</p>
+                  
                   <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2 uppercase">
                     {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
                   </h2>
