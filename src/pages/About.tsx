@@ -128,7 +128,6 @@ export default function About() {
                   <img src={logo} alt="Слобода" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-heading text-xs tracking-[0.3em] text-primary mb-2">01</p>
                   <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase leading-tight">
                     {lang === 'ua' ? 'Історія створення' : 'History'}
                   </h2>
