@@ -61,8 +61,14 @@ export default function Fund() {
             </div>
 
             <div className="text-center pt-4">
-              <Button variant="hero" size="xl">
-                {lang === 'ua' ? 'Зробити донат' : 'Make a Donation'}
+              <Button variant="hero" size="xl" asChild>
+                <a
+                  href="https://send.monobank.ua/jar/3MvSNZbPmH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {lang === 'ua' ? 'Зробити донат' : 'Make a Donation'}
+                </a>
               </Button>
             </div>
           </motion.div>
