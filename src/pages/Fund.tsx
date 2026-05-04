@@ -15,7 +15,7 @@ export default function Fund() {
       style={{ backgroundImage: `url(${pattern})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
     >
       <Header />
-      <section className="relative pt-32 pb-4 md:pb-16">
+      <section className="relative pt-20 md:pt-32 pb-4 md:pb-16">
         <div className="container relative z-10">
           <motion.h1
             className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4"
