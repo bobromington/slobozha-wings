@@ -32,7 +32,7 @@ export default function Fund() {
             className="space-y-8"
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           >
-            <div>
+            <div className="bg-card border border-border rounded p-6">
               <h2 className="font-heading text-2xl font-bold text-primary mb-3">
                 {lang === 'ua' ? 'Напрямки зборів' : 'Fundraising Directions'}
               </h2>
