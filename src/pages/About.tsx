@@ -3,7 +3,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import logo from '@/assets/logo.png';
-import samosudov from '@/assets/samosudov.png';
+import samosudov from '@/assets/samosudov.webp';
 
 const historyParagraphsUA = [
   'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.',
