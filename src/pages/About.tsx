@@ -84,7 +84,7 @@ export default function About() {
                     {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
                   </h2>
                   <p className="text-primary font-heading text-sm tracking-widest uppercase mb-6">
-                    {lang === 'ua' ? 'Командир підрозділу' : 'Unit Commander'}
+                    {lang === 'ua' ? 'Командир загону' : 'Detachment Commander'}
                   </p>
                   <div className="space-y-4 text-foreground/90 leading-relaxed">
                     <p>
