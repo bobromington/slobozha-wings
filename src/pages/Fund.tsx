@@ -3,16 +3,15 @@ import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import bgRed from '@/assets/bg-red.png';
-import pattern from '@/assets/sloboda-pattern.png';
+import pattern from '@/assets/sloboda-pattern.webp';
 
 export default function Fund() {
   const { lang } = useLanguage();
 
   return (
     <div
-      className="min-h-screen bg-background"
-      style={{ backgroundImage: `url(${pattern})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
+      className="min-h-screen bg-background bg-cover bg-center md:bg-fixed"
+      style={{ backgroundImage: `url(${pattern})` }}
     >
       <Header />
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">

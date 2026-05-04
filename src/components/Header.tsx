@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
-import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
+import slobodaSamosud from '@/assets/sloboda-samosud-hor.webp';
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
@@ -25,8 +25,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Слобода" className="h-10 md:h-14 w-auto" />
-          <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-8 md:h-11 w-auto -translate-y-[1px] md:-translate-y-[1px]" />
+          <img src={logo} alt="Слобода" fetchPriority="high" decoding="async" className="h-10 md:h-14 w-auto" />
+          <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" decoding="async" className="h-8 md:h-11 w-auto -translate-y-[1px] md:-translate-y-[1px]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">

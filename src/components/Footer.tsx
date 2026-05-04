@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import logo from '@/assets/logo.png';
-import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
+import slobodaSamosud from '@/assets/sloboda-samosud-hor.webp';
 
 const socialLinks = [
   { name: 'Instagram', url: '#', icon: 'IG' },
