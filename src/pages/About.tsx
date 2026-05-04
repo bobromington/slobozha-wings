@@ -33,7 +33,8 @@ export default function About() {
     <div className="min-h-screen relative">
       {/* Fixed video background */}
       <video
-        autoPlay muted loop playsInline
+        autoPlay muted loop playsInline preload="metadata"
+        poster="/video/about-bg-poster.jpg"
         className="fixed inset-0 w-full h-full object-cover z-0"
       >
         <source src="/video/about-bg.mp4" type="video/mp4" />
