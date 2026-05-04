@@ -18,7 +18,7 @@ export default function Fund() {
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">
         <div className="container max-w-3xl relative z-10">
           <motion.h1
-            className="font-heading font-bold text-foreground mb-4 whitespace-nowrap text-[clamp(1.5rem,8vw,4.5rem)]"
+            className="font-heading font-bold text-foreground mb-4 whitespace-nowrap text-[clamp(1.1rem,6.2vw,4.5rem)]"
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           >
             {lang === 'ua' ? 'Благодійний фонд' : 'Charity Fund'}
