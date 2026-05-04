@@ -10,13 +10,12 @@ export default function Fund() {
   const { lang } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div
+      className="min-h-screen bg-background"
+      style={{ backgroundImage: `url(${pattern})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
+    >
       <Header />
       <section className="relative pt-32 pb-16">
-        <div className="absolute inset-0">
-          <img src={pattern} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/70" />
-        </div>
         <div className="container relative z-10">
           <motion.h1
             className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4"
