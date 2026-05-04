@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import bgRed from '@/assets/bg-red.png';
+import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
   const { lang } = useLanguage();
@@ -13,8 +14,8 @@ export default function Fund() {
       <Header />
       <section className="relative pt-32 pb-16">
         <div className="absolute inset-0">
-          <img src={bgRed} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-background/90" />
+          <img src={pattern} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/70" />
         </div>
         <div className="container relative z-10">
           <motion.h1
