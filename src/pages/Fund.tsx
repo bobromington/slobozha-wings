@@ -17,12 +17,28 @@ export default function Fund() {
       <Header />
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">
         <div className="container max-w-3xl relative z-10">
-          <motion.h1
-            className="font-heading font-bold text-foreground mb-4 whitespace-nowrap text-[clamp(1.1rem,6.2vw,4.5rem)]"
+          <motion.div
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+            className="mb-4"
           >
-            {lang === 'ua' ? 'Благодійний фонд' : 'Charity Fund'}
-          </motion.h1>
+            <h1 className="sr-only">{lang === 'ua' ? 'Благодійний фонд' : 'Charity Fund'}</h1>
+            <svg
+              viewBox={lang === 'ua' ? '0 0 360 56' : '0 0 360 56'}
+              className="w-full block"
+              aria-hidden="true"
+            >
+              <text
+                x="0"
+                y="48"
+                className="fill-foreground"
+                style={{ fontFamily: 'Oswald, sans-serif', fontWeight: 700, fontSize: '64px', letterSpacing: '-1px' }}
+                textLength="360"
+                lengthAdjust="spacingAndGlyphs"
+              >
+                {lang === 'ua' ? 'БЛАГОДІЙНИЙ ФОНД' : 'CHARITY FUND'}
+              </text>
+            </svg>
+          </motion.div>
         </div>
       </section>
 
