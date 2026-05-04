@@ -20,9 +20,9 @@ export default function Footer() {
   return (
     <footer className="bg-secondary border-t border-border">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 lg:[grid-template-columns:1.5fr_1fr_1fr_1fr] items-start">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Слобода" className="h-12 w-auto" />
               <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-10 w-auto" />
             </div>
@@ -51,7 +51,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-heading text-sm tracking-widest text-foreground mb-4">{tr.footer.social}</h4>
-            <div className="grid grid-cols-3 gap-2 w-fit">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-fit lg:ml-auto">
               {socialLinks.map((s) => (
                 <a
                   key={s.name}
