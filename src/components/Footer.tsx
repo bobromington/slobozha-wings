@@ -5,10 +5,10 @@ import logo from '@/assets/logo.png';
 import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
 
 const socialLinks = [
-  { name: 'Instagram', url: '#', icon: 'IG' },
+  { name: 'Instagram', url: 'https://www.instagram.com/sloboda_unit/', icon: 'IG' },
   { name: 'Telegram', url: '#', icon: 'TG' },
   { name: 'Facebook', url: '#', icon: 'FB' },
-  { name: 'YouTube', url: '#', icon: 'YT' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@SLOBODA_UNIT', icon: 'YT' },
   { name: 'X', url: '#', icon: 'X' },
   { name: 'TikTok', url: '#', icon: 'TT' },
 ];
