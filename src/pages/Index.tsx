@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import logo from '@/assets/logo.png';
-import bgFire from '@/assets/bg-fire-new.webp';
-import bgRed from '@/assets/bg-red-new.webp';
-import bgWhite from '@/assets/bg-white-new.webp';
-import bgWhite1 from '@/assets/bg-white1.webp';
-import slobodaWide from '@/assets/sloboda-wide.webp';
-import samosudov from '@/assets/samosudov.webp';
+import bgFire from '@/assets/bg-fire-new.png';
+import bgRed from '@/assets/bg-red-new.png';
+import bgWhite from '@/assets/bg-white-new.png';
+import bgWhite1 from '@/assets/bg-white1.png';
+import slobodaWide from '@/assets/sloboda-wide.png';
+import samosudov from '@/assets/samosudov.png';
 import samosudTeam from '@/assets/samosud-team.png';
 
 const fadeUp = {
@@ -54,12 +54,10 @@ export default function Index() {
     <div className="min-h-screen relative">
       {/* Fixed video background */}
       <video
-        autoPlay muted loop playsInline preload="metadata"
-        poster="/video/hero-bg-poster.jpg"
+        autoPlay muted loop playsInline
         className="fixed inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="/video/hero-bg.mp4" type="video/mp4" />
-      </video>
+        src="/video/hero-bg.mov"
+      />
       <div className="fixed inset-0 z-0 bg-black/60" />
 
       <div className="relative z-10">

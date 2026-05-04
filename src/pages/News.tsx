@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import bgFire from '@/assets/bg-fire.webp';
-import bgRed from '@/assets/bg-red.webp';
-import bgWhite1 from '@/assets/bg-white1.webp';
+import bgFire from '@/assets/bg-fire.png';
+import bgRed from '@/assets/bg-red.png';
+import bgWhite1 from '@/assets/bg-white1.png';
 
 const newsItems = [
   { id: 1, date: '2024-03-15', titleUA: 'Успішна операція на східному напрямку', titleEN: 'Successful operation on the eastern front', image: bgFire, descUA: 'Підрозділ успішно виконав завдання з повітряної розвідки та ураження ворожих позицій.', descEN: 'The unit successfully completed aerial reconnaissance and strike missions against enemy positions.' },
@@ -36,7 +36,7 @@ export default function News() {
                 viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               >
                 <div className="h-48 md:h-auto">
-                  <img src={n.image} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src={n.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:col-span-2 p-6 flex flex-col justify-center">
                   <time className="text-xs text-muted-foreground font-heading tracking-wider">{n.date}</time>

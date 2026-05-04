@@ -30,12 +30,10 @@ export default function Vacancies() {
     <div className="min-h-screen relative">
       {/* Fixed video background */}
       <video
-        autoPlay muted loop playsInline preload="metadata"
-        poster="/video/vacancies-bg-poster.jpg"
+        autoPlay muted loop playsInline
         className="fixed inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="/video/vacancies-bg.mp4" type="video/mp4" />
-      </video>
+        src="/video/vacancies-bg.mov"
+      />
       <div className="fixed inset-0 z-0 bg-black/70" />
 
       <div className="relative z-10">
