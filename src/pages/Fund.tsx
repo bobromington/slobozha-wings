@@ -26,10 +26,10 @@ export default function Fund() {
         </div>
       </section>
 
-      <section className="pt-4 pb-16 md:py-16">
+      <section className="pt-4 pb-16 md:pt-4 md:pb-16">
         <div className="container max-w-3xl">
           <motion.div
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           >
             <div className="bg-card border border-border rounded p-6">
