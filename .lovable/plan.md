@@ -1,67 +1,37 @@
 ## Що робимо
 
-Додаємо повноцінну анкету в кінець сторінки `/vacancies` (якір `#application-form`, до якого вже веде кнопка ЗАПОВНИТИ АНКЕТУ). Форма повторює структуру з lubart.army: дві вкладки **Цивільний / Військовий**, поля з валідацією, чекбокс згоди, кнопка submit. Стиль — у нашій dark/red військовій темі (не копіюємо колір/шрифт Любарта, а використовуємо наші токени: Oswald headings, red accent `#dc2626`, dark surfaces).
+Після успішного submit анкети на `/vacancies#application-form`:
+1. Лист рекрутеру на **slobodangu@gmail.com** з усіма даними анкети.
+2. Лист-підтвердження кандидату на вказаний ним email («Дякуємо, заявку отримано»).
 
-## Структура секції
+## Передумови (інфраструктура)
 
-```text
-[ ОБЕРІТЬ ВАШ СТАТУС ]
-[ Цивільний  | Військовий ]   ← таби (Tabs з shadcn)
-
-— Civilian tab —
-Ім'я *           Прізвище *
-Номер телефону * (+38 prefix)
-Електронна пошта *
-Дата народження * (DD / MM / YYYY — три інпути)
-Коментар (textarea)
-[x] Згода на обробку персональних даних *
-[ Надіслати ]
-
-— Military tab —
-Все те ж саме + поле «Рід військ» (Select: ЗСУ / ТрО / НГУ / ДПСУ / МП / ДШВ / ССО / Інше)
-```
+1. **Увімкнути Lovable Cloud** — потрібен бекенд для edge-функцій і відправки пошти.
+2. **Налаштувати email-домен** Lovable Emails (вбудований сервіс, без зовнішніх акаунтів). Користувачу буде показано діалог setup для вибору домену-відправника (напр. `notify.sloboda-drones.lovable.app` або власний домен, якщо буде підключено).
+3. Розгорнути інфраструктуру черги (`setup_email_infra`) і шаблони (`scaffold_transactional_email`).
 
 ## Файли
 
-**1. `src/components/ApplicationForm.tsx`** (новий)
-- React Hook Form + Zod валідація (бібліотеки вже в проєкті)
-- shadcn компоненти: `Tabs`, `Form`, `Input`, `Textarea`, `Select`, `Checkbox`, `Button`
-- Дві Zod-схеми: `civilianSchema`, `militarySchema` (military extends civilian + `branch`)
-- Валідація: ім'я/прізвище 1-50 символів, телефон рівно 9 цифр (після +38), email, дата народження — валідна дата, вік 18-65
-- При submit: поки що `toast` з повідомленням "Дякуємо! Заявка отримана" (без backend — окремим кроком за потреби можна додати Lovable Cloud + edge function для прийому)
-- Всі тексти двомовні через `useLanguage()` + `t(lang)`
+**Edge Function `supabase/functions/send-application/index.ts`** (нова) — приймає payload анкети, валідує через Zod, далі робить два виклики `send-transactional-email`:
+- темплейт `application-internal` → на `slobodangu@gmail.com`
+- темплейт `application-confirmation` → на email кандидата
 
-**2. `src/lib/i18n.ts`**
-Додати блок `application` в `ua` та `en`:
-```
-application: {
-  title, subtitle, statusLabel,
-  tabs: { civilian, military },
-  fields: { firstName, lastName, phone, email, birthDate, branch, comment, consent },
-  branches: { zsu, tro, ngu, dpsu, mp, dshv, sso, other, placeholder },
-  submit, success, errors: {...}
-}
-```
+**Шаблони React Email у `supabase/functions/_shared/transactional-email-templates/`:**
+- `application-internal.tsx` — внутрішній лист зі структурованим списком полів (ПІБ, телефон +38…, email, дата народження, статус civilian/military, рід військ, коментар).
+- `application-confirmation.tsx` — брендований лист кандидату («Дякуємо! Ми отримали вашу заявку…»), з подякою і контактами загону.
+- Обидва зареєструвати у `registry.ts`.
 
-**3. `src/pages/Vacancies.tsx`**
-Перед `<Footer />` додати:
-```tsx
-<section id="application-form" className="py-16 md:py-24">
-  <div className="container max-w-3xl">
-    <ApplicationForm />
-  </div>
-</section>
-```
+**`src/components/ApplicationForm.tsx`** — у `onSubmit` замість простого `toast.success` викликати `supabase.functions.invoke('send-application', { body: {...} })`. На успіх — `toast.success(tr.success)` + reset; на помилку — `toast.error`. Кнопка submit показує loading-стан.
 
-## Деталі дизайну (наша тема)
+**`src/lib/i18n.ts`** — додати рядок `errors.sendFailed` («Не вдалося надіслати заявку, спробуйте ще раз / Failed to send»).
 
-- Заголовок секції: `font-heading text-4xl md:text-6xl uppercase` червоним акцентом на «АНКЕТА»
-- Картка форми: `bg-card/70 backdrop-blur-md border border-border/50 rounded p-6 md:p-10`
-- Таби: активна вкладка з червоною підкресленою рамкою, неактивна — приглушена
-- Інпути: вже стилізовані (dark bg, border)
-- Кнопка submit: `variant="hero"` (червона), full-width на мобільному
+## Безпека
 
-## Що НЕ робимо в цьому кроці
+- Валідація на сервері через Zod (повторюємо клієнтську схему: ім'я/прізвище 2-50, телефон UA, email, дата 18-65, consent).
+- Idempotency key = `application-${uuid}-internal|confirmation`, щоб ретраї не дублювали листи.
+- Жодних секретів у фронтенді — все через edge-функцію.
 
-- Не підключаємо реальний backend/email — submit показує toast. Якщо потрібна відправка на email/Telegram/в БД — це окремий етап (Lovable Cloud + edge function).
-- Не копіюємо точні шрифти/кольори Любарта — лишаємось у нашій айдентиці.
+## Що НЕ робимо
+
+- Не зберігаємо заявки в БД (можна додати окремим кроком, якщо потрібно).
+- Не використовуємо Resend/сторонні сервіси — лише вбудовані Lovable Emails.
