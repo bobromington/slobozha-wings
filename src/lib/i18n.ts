@@ -166,6 +166,38 @@ export const translations = {
         supply: 'Logistics',
       },
     },
+    application: {
+      title: 'Application',
+      subtitle: 'JOIN THE SLOBODA DETACHMENT',
+      statusLabel: 'Choose your status',
+      tabs: { civilian: 'Civilian', military: 'Military' },
+      fields: {
+        firstName: 'First name',
+        lastName: 'Last name',
+        phone: 'Phone number',
+        email: 'Email',
+        birthDate: 'Date of birth',
+        branch: 'Branch of service',
+        branchPlaceholder: 'Select branch',
+        comment: 'Comment',
+        consent: 'I consent to the processing of my personal data',
+      },
+      branches: {
+        zsu: 'AFU', tro: 'TDF', ngu: 'NGU', dpsu: 'SBGS',
+        mp: 'Marines', dshv: 'Air Assault', sso: 'SOF', other: 'Other',
+      },
+      submit: 'Submit application',
+      success: 'Thank you! Your application has been received. We will contact you shortly.',
+      errors: {
+        required: 'Required field',
+        nameLen: 'Between 2 and 50 characters',
+        phone: 'Enter 9 digits after +38',
+        email: 'Invalid email',
+        date: 'Invalid date',
+        age: 'Age must be between 18 and 65',
+        consent: 'Consent is required',
+      },
+    },
   },
 } as const;
 
