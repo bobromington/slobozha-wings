@@ -63,10 +63,14 @@ export default function Index() {
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
+        preload="auto"
+        poster="/video/hero-bg-poster.webp"
         className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
         style={{ y: bgY, top: '-20%' }}
-        src="/video/hero-bg.mov"
-      />
+      >
+        <source src="/video/hero-bg.webm" type="video/webm" />
+        <source src="/video/hero-bg.mp4" type="video/mp4" />
+      </motion.video>
       <div className="fixed inset-0 z-0 bg-black/60" />
 
       <div className="relative z-10">
