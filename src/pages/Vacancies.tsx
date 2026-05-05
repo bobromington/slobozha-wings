@@ -3,6 +3,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ApplicationForm from '@/components/ApplicationForm';
 import { Button } from '@/components/ui/button';
 
 const vacancyDataUA = [
