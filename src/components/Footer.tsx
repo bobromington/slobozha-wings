@@ -18,7 +18,7 @@ export default function Footer() {
   const tr = t(lang);
 
   return (
-    <footer className="bg-secondary border-t border-border">
+    <footer className="bg-secondary border-t border-border mt-auto">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 lg:[grid-template-columns:1.5fr_1fr_1fr_1fr] items-start">
           <div className="md:col-span-1">

@@ -73,7 +73,7 @@ export default function Index() {
       </motion.video>
       <div className="fixed inset-0 z-0 bg-black/60" />
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
       <Header />
 
       {/* Hero */}

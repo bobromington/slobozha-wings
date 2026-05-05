@@ -37,7 +37,7 @@ export default function Blog() {
             'radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.75) 78%, hsl(var(--background)) 100%)',
         }}
       />
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
         <section className="pt-32 pb-16">
           <div className="container">
