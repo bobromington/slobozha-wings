@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Oswald', 'sans-serif'],
+        heading: ['Horta', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
