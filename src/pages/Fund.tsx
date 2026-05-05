@@ -11,10 +11,10 @@ export default function Fund() {
   const bgY = useTransform(scrollY, [0, 1000], ['0%', '25%']);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen bg-background relative">
       <motion.div
         aria-hidden
-        className="fixed inset-0 -z-10 will-change-transform"
+        className="fixed inset-0 z-0 will-change-transform"
         style={{
           backgroundImage: `url(${pattern})`,
           backgroundSize: 'cover',
@@ -26,12 +26,13 @@ export default function Fund() {
       />
       <div
         aria-hidden
-        className="fixed inset-0 -z-10 pointer-events-none"
+        className="fixed inset-0 z-0 pointer-events-none"
         style={{
           background:
             'radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.75) 78%, hsl(var(--background)) 100%)',
         }}
       />
+      <div className="relative z-10">
       <Header />
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">
         <div className="container max-w-3xl relative z-10">
