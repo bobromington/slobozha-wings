@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ['Horta', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body: ['Rubik', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
