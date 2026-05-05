@@ -64,7 +64,30 @@ export default function About() {
         <section className="py-10 md:py-16">
           <div className="container max-w-6xl space-y-8 md:space-y-10">
 
-            {/* Commander — moved to top */}
+            {/* History — moved to top */}
+            <motion.div
+              className="relative bg-background/85 backdrop-blur-md border border-border text-foreground rounded-lg p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden"
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
+            >
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+              <div className="flex items-center gap-6 mb-8">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-foreground overflow-hidden shadow-lg shrink-0 ring-2 ring-primary/40">
+                  <img src={logo} alt="Слобода" className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase leading-tight">
+                    {lang === 'ua' ? 'Історія створення' : 'History'}
+                  </h2>
+                </div>
+              </div>
+              <div className="md:border-l md:border-border md:pl-10 space-y-5 text-base md:text-lg text-foreground/90 leading-relaxed">
+                {paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Commander */}
             <motion.div
               className="relative bg-background/85 backdrop-blur-md border border-border text-foreground rounded-lg p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
@@ -114,29 +137,6 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* History */}
-            <motion.div
-              className="relative bg-background/85 backdrop-blur-md border border-border text-foreground rounded-lg p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden"
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            >
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-              <div className="flex items-center gap-6 mb-8">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-foreground overflow-hidden shadow-lg shrink-0 ring-2 ring-primary/40">
-                  <img src={logo} alt="Слобода" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase leading-tight">
-                    {lang === 'ua' ? 'Історія створення' : 'History'}
-                  </h2>
-                </div>
-              </div>
-              <div className="md:border-l md:border-border md:pl-10 space-y-5 text-base md:text-lg text-foreground/90 leading-relaxed">
-                {paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
               </div>
             </motion.div>
 
