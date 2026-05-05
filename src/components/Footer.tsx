@@ -27,7 +27,7 @@ export default function Footer() {
               <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {lang === 'ua' ? 'Загін прикриття повітряного простору. 11 Бригада НГУ.' : 'Airspace Cover Detachment. 11th Brigade NGU.'}
+              {lang === 'ua' ? <>Загін прикриття повітряного простору.<br />11 Бригада НГУ.</> : <>Airspace Cover Detachment.<br />11th Brigade NGU.</>}
             </p>
           </div>
 
