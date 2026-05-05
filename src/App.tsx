@@ -11,6 +11,7 @@ import Fund from "./pages/Fund";
 import News from "./pages/News";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/vacancies" element={<Vacancies />} />
