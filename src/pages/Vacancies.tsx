@@ -34,10 +34,14 @@ export default function Vacancies() {
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
+        preload="auto"
+        poster="/video/vacancies-bg-poster.webp"
         className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
         style={{ y: bgY, top: '-20%' }}
-        src="/video/vacancies-bg.mov"
-      />
+      >
+        <source src="/video/vacancies-bg.webm" type="video/webm" />
+        <source src="/video/vacancies-bg.mp4" type="video/mp4" />
+      </motion.video>
       <div className="fixed inset-0 z-0 bg-black/70" />
 
       <div className="relative z-10">
