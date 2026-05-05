@@ -10,7 +10,7 @@ const ScrollToTop = () => {
       window.history.scrollRestoration = "manual";
     }
     // Instant jump to top on every route change
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return null;
