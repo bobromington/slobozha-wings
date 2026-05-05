@@ -92,6 +92,7 @@ export default function Fund() {
         </div>
       </section>
       <Footer />
+      </div>
     </div>
   );
 }
