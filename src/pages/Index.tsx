@@ -150,27 +150,11 @@ export default function Index() {
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">{tr.about.description}</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {tr.about.facts.map((fact, i) => (
-              <motion.div
-                key={i}
-                className="text-center p-6 bg-card border border-border rounded"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                custom={i + 1}
-              >
-                <div className="font-heading text-3xl md:text-4xl font-bold text-primary mb-2">{fact.number}</div>
-                <div className="text-sm text-muted-foreground">{fact.label}</div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Commander */}
-      <section className="py-20 md:py-32">
+      <section className="pb-20 md:pb-32">
         <div className="container">
           <Link to="/about" className="group block">
             <motion.div
