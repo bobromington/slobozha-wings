@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import Header from '@/components/Header';
@@ -26,13 +26,16 @@ export default function Vacancies() {
   const { lang } = useLanguage();
   const tr = t(lang);
   const data = lang === 'ua' ? vacancyDataUA : vacancyDataEN;
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 1500], ['0%', '30%']);
 
   return (
     <div className="min-h-screen relative">
-      {/* Fixed video background */}
-      <video
+      {/* Fixed video background with parallax */}
+      <motion.video
         autoPlay muted loop playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0"
+        className="fixed inset-0 w-full h-[130%] object-cover z-0 will-change-transform"
+        style={{ y: bgY, top: '-15%' }}
         src="/video/vacancies-bg.mov"
       />
       <div className="fixed inset-0 z-0 bg-black/70" />

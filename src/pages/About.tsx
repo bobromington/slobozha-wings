@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,16 +28,19 @@ const historyParagraphsEN = [
 export default function About() {
   const { lang } = useLanguage();
   const paragraphs = lang === 'ua' ? historyParagraphsUA : historyParagraphsEN;
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 1500], ['0%', '30%']);
 
   return (
     <div className="min-h-screen relative">
-      {/* Fixed video background */}
-      <video
+      {/* Fixed video background with parallax */}
+      <motion.video
         autoPlay muted loop playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0"
+        className="fixed inset-0 w-full h-[130%] object-cover z-0 will-change-transform"
+        style={{ y: bgY, top: '-15%' }}
       >
         <source src="/video/about-bg.mp4" type="video/mp4" />
-      </video>
+      </motion.video>
 
       <div className="relative z-10">
         <Header />
