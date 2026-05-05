@@ -51,7 +51,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-heading text-sm tracking-widest text-foreground mb-4">{tr.footer.social}</h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-fit lg:ml-auto">
+            <div className="grid grid-cols-3 gap-2 w-fit">
               {socialLinks.map((s) => (
                 <a
                   key={s.name}
