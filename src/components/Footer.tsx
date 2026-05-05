@@ -46,6 +46,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <span>slobodangu@gmail.com</span>
               <span>+380 68 987 78 77</span>
+              <span>{lang === 'ua' ? 'м. Одеса' : 'Odesa'}</span>
             </div>
           </div>
 
@@ -58,7 +59,7 @@ export default function Footer() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-border rounded text-xs font-heading text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                  className="w-9 h-9 flex items-center justify-center border border-border rounded text-xs font-heading text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 >
                   {s.icon}
                 </a>

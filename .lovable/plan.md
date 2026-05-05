@@ -1,25 +1,11 @@
-## Що робимо
+## План правок футера
 
-Після успішного submit анкети на `/vacancies#application-form`:
-- Лист рекрутеру на **slobodangu@gmail.com** з усіма даними анкети.
-- Підтвердження кандидату НЕ надсилаємо (за рішенням користувача).
+### 1. Додати рядок «м. Одеса» в колонку «Контакти»
+У `src/components/Footer.tsx` у блоці колонки «Контакти» додати третій `<span>` з текстом "м. Одеса" (або еквівалент залежно від мови). Це вирівняє висоту цієї колонки з колонкою «Посилання» (4 рядки vs 4 рядки).
 
-## Передумови (інфраструктура)
+### 2. Зменшити іконки соцмереж
+Змінити класи іконок соцмереж з `w-10 h-10` на `w-9 h-9`. Це зменшить висоту блоку соцмереж, щоб він не перевищував висоту текстових колонок.
 
-1. Lovable Cloud — увімкнено.
-2. Налаштувати email-домен Lovable Emails (діалог setup).
-3. `setup_email_infra` + `scaffold_transactional_email`.
-
-## Файли
-
-- `supabase/functions/send-application/index.ts` — приймає payload, валідує Zod, викликає `send-transactional-email` з шаблоном `application-internal` → `slobodangu@gmail.com`.
-- `supabase/functions/_shared/transactional-email-templates/application-internal.tsx` + реєстрація в `registry.ts`.
-- `src/components/ApplicationForm.tsx` — `onSubmit` викликає `supabase.functions.invoke('send-application', ...)`, loading-стан, toast success/error.
-- `src/lib/i18n.ts` — `errors.sendFailed`.
-
-## Безпека
-- Серверна валідація Zod, idempotency key `application-${uuid}`.
-
-## Що НЕ робимо
-- Не зберігаємо в БД.
-- Не надсилаємо лист-підтвердження кандидату.
+Технічні деталі:
+- Файл: `src/components/Footer.tsx`
+- Зміни тільки в розмітці (JSX), без зміни логіки чи стилів Tailwind.
