@@ -6,7 +6,7 @@ import { useReducedMotion, useScroll, useTransform, type MotionValue } from 'fra
  */
 export function useParallaxY(
   distance: number = 1500,
-  offset: string = '30%'
+  offset: string = '8%'
 ): MotionValue<string> | string {
   const prefersReducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
