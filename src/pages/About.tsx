@@ -45,7 +45,7 @@ export default function About() {
         <source src="/video/about-bg.mp4" type="video/mp4" />
       </motion.video>
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
 
         {/* Hero */}

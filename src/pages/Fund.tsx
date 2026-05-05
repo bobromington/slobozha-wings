@@ -32,7 +32,7 @@ export default function Fund() {
             'radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.75) 78%, hsl(var(--background)) 100%)',
         }}
       />
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
       <Header />
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">
         <div className="container max-w-3xl relative z-10">
