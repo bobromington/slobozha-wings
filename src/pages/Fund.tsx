@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,8 +8,7 @@ import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
   const { lang } = useLanguage();
-  const { scrollY } = useScroll();
-  const bgY = useTransform(scrollY, [0, 1000], ['0%', '25%']);
+  const bgY = useParallaxY(1000, '25%');
 
   return (
     <div className="min-h-screen bg-background relative">
