@@ -15,14 +15,6 @@ import slobodaWide from '@/assets/sloboda-wide.png';
 import samosudov from '@/assets/samosudov.png';
 import samosudTeam from '@/assets/samosud-team.png';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.12, duration: 1.1, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
-
 const newsData = [
   {
     id: 1,
