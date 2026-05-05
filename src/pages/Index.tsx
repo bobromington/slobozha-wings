@@ -43,7 +43,7 @@ export default function Index() {
   const { lang } = useLanguage();
   const tr = t(lang);
   const prefersReducedMotion = useReducedMotion();
-  const bgY = useParallaxY(1500, '30%');
+  const bgY = useParallaxY(1500, '8%');
   const fadeUp = prefersReducedMotion
     ? {
         hidden: { opacity: 0 },
@@ -63,8 +63,8 @@ export default function Index() {
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
-        className="fixed inset-0 w-full h-[130%] object-cover z-0 will-change-transform"
-        style={{ y: bgY, top: '-15%' }}
+        className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
+        style={{ y: bgY, top: '-20%' }}
         src="/video/hero-bg.mov"
       />
       <div className="fixed inset-0 z-0 bg-black/60" />

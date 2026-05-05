@@ -8,7 +8,7 @@ import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
   const { lang } = useLanguage();
-  const bgY = useParallaxY(1000, '25%');
+  const bgY = useParallaxY(1000, '6%');
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -17,11 +17,11 @@ export default function Fund() {
         className="fixed inset-0 z-0 will-change-transform"
         style={{
           backgroundImage: `url(${pattern})`,
-          backgroundSize: 'cover',
+          backgroundSize: '115%',
           backgroundPosition: 'center',
           y: bgY,
-          top: '-15%',
-          height: '130%',
+          top: '-20%',
+          height: '140%',
         }}
       />
       <div

@@ -29,15 +29,15 @@ const historyParagraphsEN = [
 export default function About() {
   const { lang } = useLanguage();
   const paragraphs = lang === 'ua' ? historyParagraphsUA : historyParagraphsEN;
-  const bgY = useParallaxY(1500, '30%');
+  const bgY = useParallaxY(1500, '8%');
 
   return (
     <div className="min-h-screen relative">
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
-        className="fixed inset-0 w-full h-[130%] object-cover z-0 will-change-transform"
-        style={{ y: bgY, top: '-15%' }}
+        className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
+        style={{ y: bgY, top: '-20%' }}
       >
         <source src="/video/about-bg.mp4" type="video/mp4" />
       </motion.video>
