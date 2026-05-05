@@ -19,7 +19,7 @@ function buildSchemas(tr: ReturnType<typeof t>['application']) {
   const base = {
     firstName: z.string().trim().min(2, e.nameLen).max(50, e.nameLen),
     lastName: z.string().trim().min(2, e.nameLen).max(50, e.nameLen),
-    phone: z.string().regex(/^\d{9}$/, e.phone),
+    phone: z.string().regex(/^0(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)\d{7}$/, e.phone),
     email: z.string().trim().email(e.email).max(255),
     day: z.string().regex(/^\d{1,2}$/, e.date),
     month: z.string().regex(/^\d{1,2}$/, e.date),
@@ -99,9 +99,9 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
             <FormControl>
               <div className="flex">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-input bg-secondary text-foreground text-sm">+38</span>
-                <Input {...field} inputMode="numeric" maxLength={9} placeholder="0XXXXXXXX"
+                <Input {...field} inputMode="numeric" maxLength={10} placeholder="0XXXXXXXXX"
                   className="rounded-l-none"
-                  onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 9))} />
+                  onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 10))} />
               </div>
             </FormControl>
             <FormMessage />

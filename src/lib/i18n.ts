@@ -92,7 +92,7 @@ export const translations = {
       errors: {
         required: 'Обов\'язкове поле',
         nameLen: 'Від 2 до 50 символів',
-        phone: 'Введіть 9 цифр після +38',
+        phone: 'Введіть коректний український номер: 0XX XXX XX XX',
         email: 'Невірний email',
         date: 'Невірна дата',
         age: 'Вік має бути від 18 до 65 років',
@@ -191,7 +191,7 @@ export const translations = {
       errors: {
         required: 'Required field',
         nameLen: 'Between 2 and 50 characters',
-        phone: 'Enter 9 digits after +38',
+        phone: 'Enter a valid Ukrainian number: 0XX XXX XX XX',
         email: 'Invalid email',
         date: 'Invalid date',
         age: 'Age must be between 18 and 65',
