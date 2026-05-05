@@ -1,19 +1,37 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import bgRed from '@/assets/bg-red.png';
 import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
   const { lang } = useLanguage();
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 1000], ['0%', '25%']);
 
   return (
-    <div
-      className="min-h-screen bg-background"
-      style={{ backgroundImage: `url(${pattern})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
-    >
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <motion.div
+        aria-hidden
+        className="fixed inset-0 -z-10 will-change-transform"
+        style={{
+          backgroundImage: `url(${pattern})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          y: bgY,
+          top: '-15%',
+          height: '130%',
+        }}
+      />
+      <div
+        aria-hidden
+        className="fixed inset-0 -z-10 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.75) 78%, hsl(var(--background)) 100%)',
+        }}
+      />
       <Header />
       <section className="relative pt-20 md:pt-32 pb-4 md:pb-8">
         <div className="container max-w-3xl relative z-10">
