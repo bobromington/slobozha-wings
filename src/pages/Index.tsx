@@ -167,7 +167,7 @@ export default function Index() {
       {/* Commander */}
       <section className="pb-20 md:pb-32">
         <div className="container">
-          <Link to="/about" className="group block">
+          <Link to="/about#commander" className="group block">
             <motion.div
               className="relative rounded overflow-hidden h-[400px] md:h-[500px]"
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
