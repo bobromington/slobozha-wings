@@ -95,6 +95,13 @@ export default function Vacancies() {
           </div>
         </section>
 
+        {/* Application form */}
+        <section id="application-form" className="py-16 md:py-24 scroll-mt-24">
+          <div className="container max-w-3xl">
+            <ApplicationForm />
+          </div>
+        </section>
+
         <Footer />
       </div>
     </div>
