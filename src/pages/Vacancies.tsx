@@ -3,6 +3,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ApplicationForm from '@/components/ApplicationForm';
 import { Button } from '@/components/ui/button';
 
 const vacancyDataUA = [
@@ -91,6 +92,13 @@ export default function Vacancies() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* Application form */}
+        <section id="application-form" className="py-16 md:py-24 scroll-mt-24">
+          <div className="container max-w-3xl">
+            <ApplicationForm />
           </div>
         </section>
 
