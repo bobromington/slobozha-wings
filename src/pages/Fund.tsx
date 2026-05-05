@@ -8,7 +8,7 @@ import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
   const { lang } = useLanguage();
-  const bgY = useParallaxY(1000, '25%');
+  const bgY = useParallaxY(1000, '6%');
 
   return (
     <div className="min-h-screen bg-background relative">

@@ -16,7 +16,7 @@ const newsItems = [
 
 export default function News() {
   const { lang } = useLanguage();
-  const bgY = useParallaxY(1000, '25%');
+  const bgY = useParallaxY(1000, '6%');
 
   return (
     <div className="min-h-screen bg-background relative">

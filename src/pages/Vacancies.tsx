@@ -27,7 +27,7 @@ export default function Vacancies() {
   const { lang } = useLanguage();
   const tr = t(lang);
   const data = lang === 'ua' ? vacancyDataUA : vacancyDataEN;
-  const bgY = useParallaxY(1500, '30%');
+  const bgY = useParallaxY(1500, '8%');
 
   return (
     <div className="min-h-screen relative">

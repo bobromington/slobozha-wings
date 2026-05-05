@@ -43,7 +43,7 @@ export default function Index() {
   const { lang } = useLanguage();
   const tr = t(lang);
   const prefersReducedMotion = useReducedMotion();
-  const bgY = useParallaxY(1500, '30%');
+  const bgY = useParallaxY(1500, '8%');
   const fadeUp = prefersReducedMotion
     ? {
         hidden: { opacity: 0 },
