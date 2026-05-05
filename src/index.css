@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Horta';
+  src: url('/fonts/horta.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -45,7 +53,7 @@
     --sidebar-border: 0 0% 18%;
     --sidebar-ring: 358 69% 40%;
 
-    --font-heading: 'Oswald', sans-serif;
+    --font-heading: 'Horta', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     --hero-overlay: linear-gradient(180deg, hsla(0, 0%, 0%, 0.6) 0%, hsla(0, 0%, 0%, 0.3) 50%, hsla(0, 0%, 0%, 0.8) 100%);
