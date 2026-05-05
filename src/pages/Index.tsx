@@ -146,7 +146,9 @@ export default function Index() {
             custom={0}
           >
             <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.about.subtitle}</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.about.title}</h2>
+            <Link to="/about" className="inline-block">
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6 hover:text-primary transition-colors cursor-pointer">{tr.about.title}</h2>
+            </Link>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">{tr.about.description}</p>
           </motion.div>
 
