@@ -301,7 +301,7 @@ export default function Index() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-heading text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors">
-                    Підрозділ працює — новини незабаром
+                    {lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon'}
                   </h3>
                 </div>
               </motion.article>

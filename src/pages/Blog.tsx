@@ -60,7 +60,7 @@ export default function Blog() {
                     {lang === 'ua' ? post.tagUA : post.tagEN}
                   </span>
                   <h2 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    Пишемо історію
+                    {lang === 'ua' ? 'Пишемо історію' : 'Writing history'}
                   </h2>
                 </motion.article>
               ))}

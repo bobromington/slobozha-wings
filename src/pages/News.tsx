@@ -64,7 +64,7 @@ export default function News() {
                   </div>
                   <div className="md:col-span-2 p-6 flex flex-col justify-center">
                     <h2 className="font-heading text-xl font-bold text-foreground mt-2 mb-3">
-                      Підрозділ працює — новини незабаром
+                      {lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon'}
                     </h2>
                     <p className="text-muted-foreground">{lang === 'ua' ? n.descUA : n.descEN}</p>
                   </div>
