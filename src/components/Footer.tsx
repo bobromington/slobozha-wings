@@ -6,11 +6,10 @@ import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
 
 const socialLinks = [
   { name: 'Instagram', url: 'https://www.instagram.com/sloboda_unit/', icon: 'IG' },
-  { name: 'Telegram', url: '#', icon: 'TG' },
-  { name: 'Facebook', url: '#', icon: 'FB' },
+  { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61560196424655', icon: 'FB' },
   { name: 'YouTube', url: 'https://www.youtube.com/@SLOBODA_UNIT', icon: 'YT' },
-  { name: 'X', url: '#', icon: 'X' },
-  { name: 'TikTok', url: '#', icon: 'TT' },
+  { name: 'X', url: 'https://x.com/SlobodaUnit', icon: 'X' },
+  { name: 'TikTok', url: 'https://www.tiktok.com/@slobodaunit', icon: 'TT' },
 ];
 
 export default function Footer() {
