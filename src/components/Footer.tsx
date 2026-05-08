@@ -27,7 +27,11 @@ export default function Footer() {
               <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {lang === 'ua' ? <>Загін прикриття повітряного простору.<br />11 Бригада НГУ.</> : <>Airspace Cover Detachment.<br />11th Brigade NGU.</>}
+              {lang === 'ua' ? (
+                <>Загін прикриття повітряного простору.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11 Бригада НГУ.</a></>
+              ) : (
+                <>Airspace Cover Detachment.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11th Brigade NGU.</a></>
+              )}
             </p>
           </div>
 
