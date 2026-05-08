@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Fund from "./pages/Fund";
 import News from "./pages/News";
 import Blog from "./pages/Blog";
+import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/fund" element={<Fund />} />
             <Route path="/news" element={<News />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

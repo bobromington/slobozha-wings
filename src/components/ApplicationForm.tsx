@@ -13,6 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { supabase } from '@/integrations/supabase/client';
 
 function buildSchemas(tr: ReturnType<typeof t>['application']) {
   const e = tr.errors;
@@ -65,10 +66,23 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof military>) => {
-    console.log('application submit', { mode, ...values });
-    toast.success(tr.success);
-    form.reset();
+  const onSubmit = async (values: z.infer<typeof military>) => {
+    try {
+      const id = crypto.randomUUID();
+      const { error } = await supabase.functions.invoke('send-transactional-email', {
+        body: {
+          templateName: 'application-submission',
+          idempotencyKey: `application-${id}`,
+          templateData: { mode, lang, ...values },
+        },
+      });
+      if (error) throw error;
+      toast.success(tr.success);
+      form.reset();
+    } catch (e) {
+      console.error('application submit failed', e);
+      toast.error('Помилка відправлення');
+    }
   };
 
   const branchKeys = ['zsu', 'tro', 'ngu', 'dpsu', 'mp', 'dshv', 'sso', 'other'] as const;
