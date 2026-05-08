@@ -89,10 +89,11 @@ export const translations = {
       },
       submit: 'Надіслати анкету',
       success: 'Дякуємо! Вашу анкету отримано. Ми зв\'яжемося з вами найближчим часом.',
+      errorSubmit: 'Помилка відправлення. Спробуйте ще раз.',
       errors: {
         required: 'Обов\'язкове поле',
         nameLen: 'Від 2 до 50 символів',
-        phone: 'Введіть коректний український номер: 0XX XXX XX XX',
+        phone: 'Введіть коректний український мобільний номер (10 цифр, напр. 0501234567)',
         email: 'Невірний email',
         date: 'Невірна дата',
         age: 'Вік має бути від 18 до 65 років',
@@ -124,7 +125,7 @@ export const translations = {
       facts: [
         { number: '500+', label: 'UAV Operators' },
         { number: '1000+', label: 'Successful Missions' },
-        { number: '24/7', label: 'Combat Readiness' },
+        { number: '24/7', label: 'Combat Duty' },
         { number: '10+', label: 'UAV Types' },
       ],
       directions: [
@@ -163,7 +164,7 @@ export const translations = {
         tech: 'Technical Specialists',
         analysts: 'Analysts',
         it: 'IT Specialists',
-        supply: 'Logistics',
+        supply: 'Support',
       },
     },
     application: {
@@ -183,15 +184,16 @@ export const translations = {
         consent: 'I consent to the processing of my personal data',
       },
       branches: {
-        zsu: 'AFU', tro: 'TDF', ngu: 'NGU', dpsu: 'SBGS',
+        zsu: 'AFU', tro: 'TDF', ngu: 'NGU', dpsu: 'Border Guard',
         mp: 'Marines', dshv: 'Air Assault', sso: 'SOF', other: 'Other',
       },
       submit: 'Submit application',
       success: 'Thank you! Your application has been received. We will contact you shortly.',
+      errorSubmit: 'Failed to send application. Please try again.',
       errors: {
         required: 'Required field',
         nameLen: 'Between 2 and 50 characters',
-        phone: 'Enter a valid Ukrainian number: 0XX XXX XX XX',
+        phone: 'Enter a valid Ukrainian mobile number (10 digits, e.g. 0501234567)',
         email: 'Invalid email',
         date: 'Invalid date',
         age: 'Age must be between 18 and 65',

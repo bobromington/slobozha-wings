@@ -20,7 +20,7 @@ const vacancyDataEN = [
   { category: 'Technical Specialists', positions: ['UAV Maintenance Technician', 'Design Engineer', 'Repair Specialist'] },
   { category: 'Analysts', positions: ['Intelligence Analyst', 'Data Processing Specialist'] },
   { category: 'IT Specialists', positions: ['UAV Software Developer', 'System Administrator'] },
-  { category: 'Logistics', positions: ['Logistics Specialist', 'Supply Specialist'] },
+  { category: 'Support', positions: ['Logistics Specialist', 'Supply Specialist'] },
 ];
 
 export default function Vacancies() {
