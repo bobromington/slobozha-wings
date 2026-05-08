@@ -55,6 +55,12 @@ export default function About() {
       >
         <source src="/video/about-bg.webm" type="video/webm" />
         <source src="/video/about-bg.mp4" type="video/mp4" />
+        <img
+          src="/video/about-bg-poster.webp"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+        />
       </motion.video>
 
       <div className="relative z-10 flex flex-col min-h-screen">

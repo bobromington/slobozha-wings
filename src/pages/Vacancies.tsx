@@ -41,6 +41,12 @@ export default function Vacancies() {
       >
         <source src="/video/vacancies-bg.webm" type="video/webm" />
         <source src="/video/vacancies-bg.mp4" type="video/mp4" />
+        <img
+          src="/video/vacancies-bg-poster.webp"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+        />
       </motion.video>
       <div className="fixed inset-0 z-0 bg-black/70" />
 
