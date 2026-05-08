@@ -41,7 +41,7 @@ const historyParagraphsEN = [
 export default function About() {
   const { lang } = useLanguage();
   const paragraphs = lang === 'ua' ? historyParagraphsUA : historyParagraphsEN;
-  const bgY = useParallaxY(1500, '8%');
+  const bgY = useParallaxY(1500, '-8%');
 
   return (
     <div className="min-h-screen relative">
