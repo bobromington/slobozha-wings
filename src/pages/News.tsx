@@ -63,9 +63,8 @@ export default function News() {
                     <img src={n.image} alt="" className="w-full h-full object-cover" />
                   </div>
                   <div className="md:col-span-2 p-6 flex flex-col justify-center">
-                    <time className="text-xs text-muted-foreground font-heading tracking-wider">{n.date}</time>
                     <h2 className="font-heading text-xl font-bold text-foreground mt-2 mb-3">
-                      {lang === 'ua' ? n.titleUA : n.titleEN}
+                      Підрозділ працює — новини незабаром
                     </h2>
                     <p className="text-muted-foreground">{lang === 'ua' ? n.descUA : n.descEN}</p>
                   </div>

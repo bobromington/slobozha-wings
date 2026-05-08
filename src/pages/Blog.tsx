@@ -59,9 +59,8 @@ export default function Blog() {
                   <span className="inline-block font-heading text-xs tracking-widest text-primary border border-primary/30 px-2 py-1 rounded mb-4">
                     {lang === 'ua' ? post.tagUA : post.tagEN}
                   </span>
-                  <time className="block text-xs text-muted-foreground font-heading tracking-wider mb-2">{post.date}</time>
                   <h2 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {lang === 'ua' ? post.titleUA : post.titleEN}
+                    Пишемо історію
                   </h2>
                 </motion.article>
               ))}
