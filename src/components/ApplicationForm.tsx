@@ -81,7 +81,7 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
       form.reset();
     } catch (e) {
       console.error('application submit failed', e);
-      toast.error(tr.errors?.submit ?? 'Submission failed');
+      toast.error('Помилка відправлення');
     }
   };
 
