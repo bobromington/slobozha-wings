@@ -11,6 +11,7 @@ import bgFire from '@/assets/bg-fire-new.png';
 import bgRed from '@/assets/bg-red-new.png';
 import bgWhite from '@/assets/bg-white-new.png';
 import bgWhite1 from '@/assets/bg-white1.png';
+import newsSting from '@/assets/news-sting.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
 import samosudov from '@/assets/samosudov.png';
 import samosudTeam from '@/assets/samosud-team.png';
@@ -35,7 +36,7 @@ const newsData = [
     date: '2024-03-05',
     titleUA: 'Тренування нових операторів БПЛА',
     titleEN: 'Training new UAV operators',
-    image: bgWhite1,
+    image: newsSting,
   },
 ];
 
