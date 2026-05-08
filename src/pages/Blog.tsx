@@ -56,7 +56,7 @@ export default function Blog() {
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 >
-                  <span className="inline-block font-heading text-xs tracking-widest text-primary border border-primary/30 px-2 py-1 rounded mb-4">
+                  <span className="inline-block font-heading text-xs tracking-widest text-primary-bright border border-primary/30 px-2 py-1 rounded mb-4">
                     {lang === 'ua' ? post.tagUA : post.tagEN}
                   </span>
                   <h2 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">

@@ -89,7 +89,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
           />
           <motion.p
-            className="font-heading text-sm md:text-base tracking-[0.3em] text-primary mb-3"
+            className="font-heading text-sm md:text-base tracking-[0.3em] text-primary-bright mb-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -158,7 +158,7 @@ export default function Index() {
             variants={fadeUp}
             custom={0}
           >
-            <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.about.subtitle}</p>
+            <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.about.subtitle}</p>
             <Link to="/about" className="inline-block">
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6 hover:text-primary transition-colors cursor-pointer">{tr.about.title}</h2>
             </Link>
@@ -203,7 +203,7 @@ export default function Index() {
                 <h3 className="font-heading text-3xl md:text-5xl font-bold text-white mb-2">
                   {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
                 </h3>
-                <p className="font-heading text-sm md:text-base tracking-widest text-primary uppercase">
+                <p className="font-heading text-sm md:text-base tracking-widest text-primary-bright uppercase">
                   {lang === 'ua' ? 'Командир підрозділу' : 'Unit Commander'}
                 </p>
               </div>
@@ -245,7 +245,7 @@ export default function Index() {
             className="mr-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
-            <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.recruit.subtitle}</p>
+            <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.recruit.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.recruit.title}</h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.recruit.description}</p>
             <Link to="/vacancies">
@@ -264,7 +264,7 @@ export default function Index() {
             className="ml-auto w-full md:w-1/2 p-8 md:p-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
-            <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.support.subtitle}</p>
+            <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.support.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.support.title}</h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.support.description}</p>
             <Link to="/fund">
@@ -281,7 +281,7 @@ export default function Index() {
             className="text-center mb-16"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
           >
-            <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.news.subtitle}</p>
+            <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.news.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">{tr.news.title}</h2>
           </motion.div>
 

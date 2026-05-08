@@ -25,6 +25,7 @@
 
     --primary: 358 69% 40%;
     --primary-foreground: 0 0% 100%;
+    --primary-text: 358 78% 52%;
 
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 85%;
@@ -85,6 +86,14 @@
     background: var(--gradient-red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .text-primary-bright {
+    color: hsl(var(--primary-text));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    text-shadow: 0 0 0.6px currentColor;
   }
 }
 
