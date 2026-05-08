@@ -5,13 +5,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
-import bgWhite1 from '@/assets/bg-white1.png';
+import newsSting from '@/assets/news-sting.png';
 import pattern from '@/assets/sloboda-pattern.png';
 
 const newsItems = [
   { id: 1, date: '2024-03-15', titleUA: 'Успішна операція на східному напрямку', titleEN: 'Successful operation on the eastern front', image: bgFire, descUA: 'Підрозділ успішно виконав завдання з повітряної розвідки та ураження ворожих позицій.', descEN: 'The unit successfully completed aerial reconnaissance and strike missions against enemy positions.' },
   { id: 2, date: '2024-03-10', titleUA: 'Нове обладнання для підрозділу', titleEN: 'New equipment for the unit', image: bgRed, descUA: 'Завдяки благодійному фонду підрозділ отримав нові безпілотні системи.', descEN: 'Thanks to the charity fund, the unit received new unmanned systems.' },
-  { id: 3, date: '2024-03-05', titleUA: 'Тренування нових операторів', titleEN: 'Training new operators', image: bgWhite1, descUA: 'Завершено чергову програму підготовки операторів БПЛА.', descEN: 'Another UAV operator training program has been completed.' },
+  { id: 3, date: '2024-03-05', titleUA: 'Тренування нових операторів', titleEN: 'Training new operators', image: newsSting, descUA: 'Завершено чергову програму підготовки операторів БПЛА.', descEN: 'Another UAV operator training program has been completed.' },
 ];
 
 export default function News() {
