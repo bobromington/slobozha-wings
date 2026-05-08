@@ -50,19 +50,19 @@ export default function Blog() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogPosts.map((post, i) => (
-              <motion.article
-                key={post.id}
-                className="bg-card border border-border rounded p-6 group cursor-pointer hover:border-primary/50 transition-colors"
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              >
-                <span className="inline-block font-heading text-xs tracking-widest text-primary border border-primary/30 px-2 py-1 rounded mb-4">
-                  {lang === 'ua' ? post.tagUA : post.tagEN}
-                </span>
-                <h2 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                  Пишемо історію
-                </h2>
-              </motion.article>
+                <motion.article
+                  key={post.id}
+                  className="bg-card border border-border rounded p-6 group cursor-pointer hover:border-primary/50 transition-colors"
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                >
+                  <span className="inline-block font-heading text-xs tracking-widest text-primary border border-primary/30 px-2 py-1 rounded mb-4">
+                    {lang === 'ua' ? post.tagUA : post.tagEN}
+                  </span>
+                  <h2 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                    Пишемо історію
+                  </h2>
+                </motion.article>
               ))}
             </div>
           </div>
