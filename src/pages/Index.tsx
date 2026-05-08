@@ -118,7 +118,14 @@ export default function Index() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            {tr.hero.brigade}
+            <a
+              href="https://11brigade.com.ua/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-bright transition-colors"
+            >
+              {tr.hero.brigade}
+            </a>
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
