@@ -1,18 +1,29 @@
 ## Goal
-Trim the bottom of `src/assets/samosudov-cropped.png` so the photo ends at the lower third of the lower camo patch (top two-thirds of that patch remain visible, bottom third and the dark space below are cut off).
 
-## Approach
-Re-crop from the original `src/assets/samosudov.png`:
-- Horizontal crop unchanged (x: 963 → 1633, width 670, left eye centered).
-- Top: y = 0.
-- Bottom: y ≈ 1030 (cut just at the lower third of the lower camo patch).
+Replace the background videos used on the **About** (`/about`) and **Vacancies** (`/vacancies`) pages with the two uploaded clips:
 
-Final size: 670 × 1030.
+- `REDBACK_ABOUT.mov` → About page background
+- `REDBACK_VAC.mov` → Vacancies page background
 
-## Files to change
-- `src/assets/samosudov-cropped.png` — regenerated.
+## Source files
 
-No code changes in `src/pages/About.tsx`.
+Both uploads are 4K (3840×2160) HEVC `.mov` with audio:
+- `REDBACK_ABOUT.mov` — 15.8s, 6.0 MB
+- `REDBACK_VAC.mov` — 13.6s, 4.2 MB
 
-## Verification
-View the regenerated image to confirm the photo ends at the lower third of the lower camo patch — the upper 2/3 of the patch remains, and the dark strip below is gone.
+## Steps
+
+1. Re‑encode each clip to web‑optimized backgrounds at **1920×1080**, **no audio**, looping‑friendly:
+   - `.webm` (VP9, CRF ~33) — primary, lighter file
+   - `.mp4` (H.264 high profile, CRF ~23, `+faststart`) — Safari/iOS fallback
+   - `.webp` poster from frame ~0.5s
+2. Overwrite the existing files in `public/video/` (paths already wired in code):
+   - `about-bg.webm`, `about-bg.mp4`, `about-bg-poster.webp`
+   - `vacancies-bg.webm`, `vacancies-bg.mp4`, `vacancies-bg-poster.webp`
+3. No code changes needed — `src/pages/About.tsx` and `src/pages/Vacancies.tsx` already reference these exact paths.
+4. Verify file sizes are reasonable (target each `.webm` < ~3 MB, `.mp4` < ~5 MB) and that the poster renders correctly.
+
+## Notes
+
+- Keeping the same filenames means cached visitors will get the new video on next load (Vite asset hash doesn't apply to `public/`). If you want forced cache‑busting, say so and I'll add a `?v=2` query param in the `<source>` tags.
+- Audio is stripped (these are muted backgrounds anyway).
