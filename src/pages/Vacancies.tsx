@@ -48,7 +48,7 @@ export default function Vacancies() {
           className="w-full h-full object-cover"
         />
       </motion.video>
-      <div className="fixed inset-0 z-0 bg-black/70" />
+      
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
