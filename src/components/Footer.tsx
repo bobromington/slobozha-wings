@@ -45,7 +45,7 @@ export default function Footer() {
             <h4 className="font-heading text-sm tracking-widest text-foreground mb-4">{tr.footer.contacts}</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <span>slobodangu@gmail.com</span>
-              <span>+380 68 987 78 77</span>
+              
               <span>{lang === 'ua' ? 'м. Одеса' : 'Odesa'}</span>
             </div>
           </div>
