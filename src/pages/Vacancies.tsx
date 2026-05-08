@@ -89,11 +89,8 @@ export default function Vacancies() {
                 </h2>
                 <div className="space-y-3">
                   {cat.positions.map((pos, pi) => (
-                    <div key={pi} className="flex items-center justify-between border-b border-border/40 pb-3 last:border-0">
+                    <div key={pi} className="border-b border-border/40 pb-3 last:border-0">
                       <span className="text-foreground text-lg">{pos}</span>
-                      <Button variant="outline" size="sm">
-                        {lang === 'ua' ? 'Детальніше' : 'Details'}
-                      </Button>
                     </div>
                   ))}
                 </div>
