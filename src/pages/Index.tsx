@@ -70,6 +70,12 @@ export default function Index() {
       >
         <source src="/video/hero-bg.webm" type="video/webm" />
         <source src="/video/hero-bg.mp4" type="video/mp4" />
+        <img
+          src="/video/hero-bg-poster.webp"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+        />
       </motion.video>
       <div className="fixed inset-0 z-0 bg-black/60" />
 
