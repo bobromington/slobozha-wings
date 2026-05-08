@@ -282,12 +282,26 @@ Deno.serve(async (req) => {
     )
   }
 
+  // Sanitize templateData server-side: strip CRLF, cap string length, drop non-primitives.
+  // Client-side validation is bypassable; this prevents header injection and oversized payloads.
+  const sanitizeValue = (v: unknown): unknown => {
+    if (typeof v === 'string') return v.replace(/[\r\n]+/g, ' ').slice(0, 2000)
+    if (typeof v === 'number' || typeof v === 'boolean' || v == null) return v
+    return undefined
+  }
+  const safeTemplateData: Record<string, unknown> = {}
+  for (const [k, v] of Object.entries(templateData)) {
+    if (typeof k !== 'string' || k.length > 64) continue
+    const sv = sanitizeValue(v)
+    if (sv !== undefined) safeTemplateData[k] = sv
+  }
+
   // 4. Render React Email template to HTML and plain text
   const html = await renderAsync(
-    React.createElement(template.component, templateData)
+    React.createElement(template.component, safeTemplateData)
   )
   const plainText = await renderAsync(
-    React.createElement(template.component, templateData),
+    React.createElement(template.component, safeTemplateData),
     { plainText: true }
   )
 
