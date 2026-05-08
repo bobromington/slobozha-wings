@@ -39,7 +39,7 @@ export default function Vacancies() {
         className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
         style={{ y: bgY, top: '-20%' }}
       >
-        <source src="/video/vacancies-bg.webm" type="video/webm" />
+        
         <source src="/video/vacancies-bg.mp4" type="video/mp4" />
       </motion.video>
       
