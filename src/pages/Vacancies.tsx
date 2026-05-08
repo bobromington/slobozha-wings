@@ -29,21 +29,31 @@ export default function Vacancies() {
   const tr = t(lang);
   const data = lang === 'ua' ? vacancyDataUA : vacancyDataEN;
   const bgY = useParallaxY(1500, '8%');
+  const [videoReady, setVideoReady] = useState(false);
 
   return (
     <div className="min-h-screen relative">
-      {/* Fixed video background with parallax */}
+      {/* Fallback poster — visible until video is ready */}
+      <div
+        className="fixed inset-0 w-full h-full bg-cover bg-center z-0"
+        style={{ backgroundImage: 'url(/video/vacancies-bg-poster.webp)' }}
+        aria-hidden="true"
+      />
+      {/* Fixed video background with parallax — fades in when ready */}
       <motion.video
         autoPlay muted loop playsInline
         preload="auto"
         poster="/video/vacancies-bg-poster.webp"
+        onCanPlay={() => setVideoReady(true)}
         className="fixed inset-0 w-full h-[140%] object-cover z-0 will-change-transform scale-110"
         style={{ y: bgY, top: '-20%' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: videoReady ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <source src="/video/vacancies-bg.webm" type="video/webm" />
         <source src="/video/vacancies-bg.mp4" type="video/mp4" />
       </motion.video>
-      
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
