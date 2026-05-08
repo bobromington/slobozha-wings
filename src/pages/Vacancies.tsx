@@ -42,7 +42,7 @@ export default function Vacancies() {
         <source src="/video/vacancies-bg.webm" type="video/webm" />
         <source src="/video/vacancies-bg.mp4" type="video/mp4" />
       </motion.video>
-      <div className="fixed inset-0 z-0 bg-black/70" />
+      
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
