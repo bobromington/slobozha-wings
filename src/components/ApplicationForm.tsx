@@ -223,7 +223,7 @@ export default function ApplicationForm() {
       className="bg-card/70 backdrop-blur-md border border-border/50 rounded p-6 md:p-10"
     >
       <div className="text-center mb-8">
-        <p className="font-heading text-sm tracking-[0.3em] text-primary mb-3">{tr.subtitle}</p>
+        <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.subtitle}</p>
         <h2 className="font-heading text-4xl md:text-6xl font-bold uppercase text-foreground">{tr.title}</h2>
       </div>
 

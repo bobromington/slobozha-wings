@@ -64,7 +64,7 @@ export default function About() {
         <section className="relative pt-32 pb-10">
           <div className="container max-w-6xl">
             <motion.p
-              className="font-heading text-sm tracking-[0.3em] text-primary mb-3"
+              className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
             >
               {lang === 'ua' ? 'НАША ІСТОРІЯ' : 'OUR STORY'}

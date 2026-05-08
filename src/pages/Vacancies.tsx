@@ -62,7 +62,7 @@ export default function Vacancies() {
         <section className="relative pt-32 pb-10">
           <div className="container">
             <motion.p
-              className="font-heading text-sm tracking-[0.3em] text-primary mb-3"
+              className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
             >
               {lang === 'ua' ? 'ПРИЄДНУЙСЯ ДО НАС' : 'JOIN US'}
