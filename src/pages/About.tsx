@@ -4,7 +4,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import logo from '@/assets/logo.png';
-import samosudov from '@/assets/samosudov.png';
+import samosudov from '@/assets/samosudov-cropped.png';
 
 const historyParagraphsUA = [
   'Загін прикриття повітряного простору «Слобода» був створений як відповідь на потребу в сучасних технологічних рішеннях на полі бою. Підрозділ увійшов до складу 11 Бригади Національної гвардії України та швидко став одним з найефективніших підрозділів.',
@@ -113,15 +113,7 @@ export default function About() {
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
-                <div>
-                  <img
-                    src={samosudov}
-                    alt="Тимур Самосудов"
-                    className="w-full max-w-md mx-auto rounded"
-                  />
-                </div>
-                <div>
-                  
+                <div className="md:order-1 order-2">
                   <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2 uppercase">
                     {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
                   </h2>
@@ -155,6 +147,13 @@ export default function About() {
                         : 'His approach is personal involvement, accountability for results, and working shoulder to shoulder with his soldiers.'}
                     </p>
                   </div>
+                </div>
+                <div className="md:order-2 order-1">
+                  <img
+                    src={samosudov}
+                    alt="Тимур Самосудов"
+                    className="w-full max-w-md mx-auto rounded"
+                  />
                 </div>
               </div>
             </motion.div>
