@@ -300,9 +300,8 @@ export default function Index() {
                   />
                 </div>
                 <div className="p-5">
-                  <time className="text-xs text-muted-foreground font-heading tracking-wider">{news.date}</time>
                   <h3 className="font-heading text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors">
-                    {lang === 'ua' ? news.titleUA : news.titleEN}
+                    Підрозділ працює — новини незабаром
                   </h3>
                 </div>
               </motion.article>
