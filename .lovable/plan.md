@@ -1,27 +1,49 @@
-## Що зробити
+## Виявлені проблеми з англійським перекладом
 
-Налаштувати відправку анкети на пошту **slobodangu@gmail.com** після натискання «Надіслати анкету».
+### 1. `src/pages/About.tsx` — критично
+`historyParagraphsEN` містить лише 1 абзац, тоді як українська версія має 13. EN-користувачі бачать майже порожній блок «History».
+**Виправлення:** перекласти всі 13 абзаців історії підрозділу.
 
-## План
+### 2. `src/components/ApplicationForm.tsx` — bug для EN
+Toast про помилку надсилання захардкоджений українською: `toast.error('Помилка відправлення')`. EN-користувач отримає кириличне повідомлення.
+**Виправлення:** додати `application.errorSubmit` в `i18n.ts` (UA: «Помилка відправлення», EN: «Failed to send application»), використати `tr.errorSubmit`.
 
-1. **Налаштувати email-домен для відправлення** — потрібен власний домен (наприклад, `sloboda.army`). Це разовий крок: ви додаєте домен через діалог Lovable Cloud → Email, додаєте кілька DNS-записів у реєстратора, після чого Lovable отримує право надсилати листи від вашого імені.
-2. **Розгорнути email-інфраструктуру** (черга, логи, обробники) — автоматично після підтвердження домену.
-3. **Створити шаблон листа «Нова анкета»** (React Email) — у листі будуть усі поля анкети: ім'я, прізвище, телефон, email, дата народження, статус (цивільний/військовий), рід військ (якщо військовий), коментар, мова форми.
-4. **Створити edge-функцію `send-transactional-email`** (через стандартний скаффолд) і зареєструвати в ній новий шаблон `application-submission`.
-5. **Оновити `ApplicationForm.tsx`**:
-   - У `onSubmit` викликати `supabase.functions.invoke('send-transactional-email', ...)` з усіма даними анкети.
-   - Отримувач: `slobodangu@gmail.com` (фіксовано).
-   - `idempotencyKey` — унікальний UUID на кожне надсилання.
-   - Показувати toast про успіх/помилку.
+### 3. `src/lib/i18n.ts` — категорія Logistics
+EN має `vacancies.categories.supply: 'Logistics'`, але насправді UA «Забезпечення» = ширше «Support / Logistics». У `Vacancies.tsx` категорія `'Logistics'` ще й містить позиції `Logistics Specialist` + `Supply Specialist` — тавтологія.
+**Виправлення:**
+- `categories.supply`: `'Support'`
+- `vacancyDataEN[4].category`: `'Support'`
+- залишити позиції `Logistics Specialist`, `Supply Specialist` — стане логічно
 
-## Що потрібно від вас
+### 4. `src/lib/i18n.ts` — branches
+- `dpsu: 'SBGS'` → `'Border Guard'` (зрозуміліше для не-військових)
+- `mp: 'Marines'` ✓
+- `dshv: 'Air Assault'` ✓
+- решта ОК
 
-- **Підтвердити домен для надсилання**: пропоную використати `sloboda.army` (підрозділ `notify.sloboda.army`). Після підтвердження плану з'явиться діалог для додавання DNS-записів.
-- Якщо хочете інший домен — скажіть.
+### 5. `src/lib/i18n.ts` — повідомлення про помилку телефону
+EN: `'Enter a valid Ukrainian number: 0XX XXX XX XX'` — формат показує пробіли, але регекс їх не приймає.
+**Виправлення:** EN → `'Enter a valid Ukrainian mobile number (10 digits, e.g. 0501234567)'`. Аналогічно адаптувати UA-повідомлення.
 
-## Технічні деталі
+### 6. `src/lib/i18n.ts` — application.success
+Поточний EN: «Thank you! Your application has been received. We will contact you shortly.» — ОК, без змін.
 
-- Лист — **транзакційний** (1 подія = 1 лист отримувачу), що відповідає правилам Lovable Email.
-- Адреса `slobodangu@gmail.com` зашита в коді як отримувач, а не в шаблоні.
-- Дані анкети передаються через `templateData` і рендеряться у листі через React Email (auto-escape, без HTML-ін'єкцій).
-- Тема листа: «Нова анкета — {Прізвище} {Ім'я}».
+### 7. `src/lib/i18n.ts` — інше дрібне
+- `recruit.btn`: `'View Vacancies'` ✓
+- `support.btn`: `'Support the Fund'` ✓
+- `hero.subtitle`: `'AIRSPACE COVER DETACHMENT'` ✓
+- `about.facts[2].label`: `'Combat Readiness'` — точніше було б `'Combat Duty'` (бойове чергування ≠ готовність). **Виправити на `'Combat Duty'`.**
+- `vacancies.categories.tech`: `'Technical Specialists'` ✓
+- `application.fields.consent`: «I consent to the processing of my personal data» ✓
+
+### 8. `src/components/ApplicationForm.tsx` — placeholder телефону
+Зараз `placeholder="0XXXXXXXXX"`. Залишається для обох мов — ОК, не локалізується.
+
+### Файли, які зміняться
+- `src/lib/i18n.ts` — нові/виправлені рядки (errorSubmit, errors.phone, branches.dpsu, vacancies.categories.supply, about.facts[2].label)
+- `src/components/ApplicationForm.tsx` — використати `tr.errorSubmit` замість хардкоду
+- `src/pages/Vacancies.tsx` — `vacancyDataEN[4].category` → `'Support'`
+- `src/pages/About.tsx` — повний переклад 12 додаткових абзаців історії
+
+### Поза скоупом
+Контент новин/блогу (descUA/descEN) — заголовки вже замінені на placeholder, описи коротко перекладені, лишаємо як є.
