@@ -87,6 +87,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .text-primary-bright {
+    color: hsl(var(--primary-text));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    text-shadow: 0 0 0.6px currentColor;
+  }
 }
 
 ::-webkit-scrollbar {
