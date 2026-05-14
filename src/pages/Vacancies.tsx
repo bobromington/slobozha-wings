@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import ApplicationForm from '@/components/ApplicationForm';
 import { Button } from '@/components/ui/button';
 
@@ -33,6 +34,11 @@ export default function Vacancies() {
 
   return (
     <div className="min-h-screen relative">
+      <Seo
+        title="Вакансії — Батальйон Слобода"
+        description="Відкриті вакансії в Батальйоні безпілотних систем «Слобода»: оператори БПЛА, технічні спеціалісти, аналітики, IT та забезпечення."
+        path="/vacancies"
+      />
       {/* Fallback poster — visible until video is ready */}
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center z-0"
