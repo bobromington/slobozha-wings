@@ -99,6 +99,8 @@ export const translations = {
         date: 'Невірна дата',
         age: 'Вік має бути від 18 до 65 років',
         consent: 'Необхідна згода',
+        fileSize: 'Файл завеликий. Максимум 5 МБ',
+        fileType: 'Дозволені формати: PDF, DOC, DOCX',
       },
     },
   },
