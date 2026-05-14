@@ -231,6 +231,23 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
           </FormItem>
         )} />
 
+        <FormItem>
+          <FormLabel>{tr.fields.resume}</FormLabel>
+          <FormControl>
+            <Input
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              onChange={(e) => handleFileChange(e.target.files?.[0] || null)}
+            />
+          </FormControl>
+          {resumeFile && (
+            <p className="text-sm text-muted-foreground mt-1">{resumeFile.name}</p>
+          )}
+          {resumeError && (
+            <p className="text-sm font-medium text-destructive mt-1">{resumeError}</p>
+          )}
+        </FormItem>
+
         <FormField control={form.control} name="consent" render={({ field }) => (
           <FormItem>
             <div className="flex items-start gap-3">
