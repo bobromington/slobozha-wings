@@ -1,9 +1,16 @@
 export const GA_ID = 'G-46MBTDR75Z';
 
+type GtagCommand = 'config' | 'event' | 'js' | 'set' | 'update';
+type GtagFunction = (
+  command: GtagCommand,
+  action: string,
+  params?: Record<string, unknown>
+) => void;
+
 declare global {
   interface Window {
     dataLayer: unknown[];
-    gtag: Gtag.Gtag;
+    gtag: GtagFunction;
   }
 }
 
