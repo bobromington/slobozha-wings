@@ -3,6 +3,7 @@ import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import pattern from '@/assets/sloboda-pattern.png';
 
 const blogPosts = [
@@ -17,6 +18,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <Seo
+        title="Блог — Батальйон Слобода"
+        description="Аналітика, історії операторів та матеріали Батальйону безпілотних систем «Слобода» про сучасні технології БПЛА."
+        path="/blog"
+      />
       <motion.div
         aria-hidden
         className="fixed inset-0 z-0 will-change-transform"

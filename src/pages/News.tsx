@@ -3,6 +3,7 @@ import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
 import newsSting from '@/assets/news-sting.png';
@@ -20,6 +21,11 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <Seo
+        title="Новини — Батальйон Слобода"
+        description="Оперативні та підрозділові новини Батальйону безпілотних систем «Слобода»: операції, підготовка, обладнання."
+        path="/news"
+      />
       <motion.div
         aria-hidden
         className="fixed inset-0 z-0 will-change-transform"
