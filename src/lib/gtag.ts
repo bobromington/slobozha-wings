@@ -46,3 +46,13 @@ export const trackSocial = (platform: string) =>
 
 export const trackFormSubmit = (formName: string) =>
   event('form_submit', { form_name: formName });
+
+/* Donation funnel events */
+export const trackDonateIntent = (location: string) =>
+  event('donate_intent', { cta_location: location });
+
+export const trackDonate = (paymentUrl: string, location: string) =>
+  event('donate_click', {
+    cta_location: location,
+    payment_url: paymentUrl,
+  });
