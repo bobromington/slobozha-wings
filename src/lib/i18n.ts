@@ -182,6 +182,7 @@ export const translations = {
         branch: 'Branch of service',
         branchPlaceholder: 'Select branch',
         comment: 'Comment',
+        resume: 'Resume / CV',
         consent: 'I consent to the processing of my personal data',
       },
       branches: {
