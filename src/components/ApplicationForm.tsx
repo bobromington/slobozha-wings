@@ -95,18 +95,33 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
 
   const onSubmit = async (values: z.infer<typeof military>) => {
     try {
+      let resumeUrl: string | undefined;
+      if (resumeFile) {
+        const uploadId = crypto.randomUUID();
+        const ext = resumeFile.name.split('.').pop() || '';
+        const safeName = resumeFile.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+        const filePath = `${uploadId}-${safeName}`;
+        const { error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(filePath, resumeFile, { contentType: resumeFile.type });
+        if (uploadError) throw uploadError;
+        const { data: urlData } = supabase.storage.from('resumes').getPublicUrl(filePath);
+        resumeUrl = urlData.publicUrl;
+      }
+
       const id = crypto.randomUUID();
       const { error } = await supabase.functions.invoke('send-transactional-email', {
         body: {
           templateName: 'application-submission',
           idempotencyKey: `application-${id}`,
-          templateData: { mode, lang, ...values },
+          templateData: { mode, lang, resumeUrl, ...values },
         },
       });
       if (error) throw error;
       trackFormSubmit('application');
       toast.success(tr.success);
       form.reset();
+      setResumeFile(null);
     } catch (e) {
       console.error('application submit failed', e);
       toast.error(tr.errorSubmit);
