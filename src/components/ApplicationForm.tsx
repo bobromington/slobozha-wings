@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
-import { trackFormSubmit } from '@/lib/gtag';
+import { trackFormSubmit, trackFileUpload } from '@/lib/gtag';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
