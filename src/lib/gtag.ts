@@ -47,6 +47,10 @@ export const trackSocial = (platform: string) =>
 export const trackFormSubmit = (formName: string) =>
   event('form_submit', { form_name: formName });
 
+/* File upload event */
+export const trackFileUpload = (fileName: string, fileType?: string) =>
+  event('file_upload', { file_name: fileName, file_type: fileType || 'unknown' });
+
 /* Donation funnel events */
 export const trackDonateIntent = (location: string) =>
   event('donate_intent', { cta_location: location });

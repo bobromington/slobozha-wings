@@ -81,6 +81,7 @@ export const translations = {
         branch: 'Рід військ',
         branchPlaceholder: 'Виберіть рід військ',
         comment: 'Коментар',
+        resume: 'Резюме / CV',
         consent: 'Я даю згоду на обробку моїх персональних даних',
       },
       branches: {
@@ -98,6 +99,8 @@ export const translations = {
         date: 'Невірна дата',
         age: 'Вік має бути від 18 до 65 років',
         consent: 'Необхідна згода',
+        fileSize: 'Файл завеликий. Максимум 5 МБ',
+        fileType: 'Дозволені формати: PDF, DOC, DOCX',
       },
     },
   },
@@ -181,6 +184,7 @@ export const translations = {
         branch: 'Branch of service',
         branchPlaceholder: 'Select branch',
         comment: 'Comment',
+        resume: 'Resume / CV',
         consent: 'I consent to the processing of my personal data',
       },
       branches: {
@@ -198,6 +202,8 @@ export const translations = {
         date: 'Invalid date',
         age: 'Age must be between 18 and 65',
         consent: 'Consent is required',
+        fileSize: 'File too large. Maximum 5 MB',
+        fileType: 'Allowed formats: PDF, DOC, DOCX',
       },
     },
   },

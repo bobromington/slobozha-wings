@@ -16,6 +16,7 @@ interface ApplicationSubmissionProps {
   year?: string
   branch?: string
   comment?: string
+  resumeUrl?: string
 }
 
 const labelFor = (mode?: string) =>
@@ -30,7 +31,7 @@ const Row = ({ label, value }: { label: string; value?: string }) => (
 
 const ApplicationSubmissionEmail = ({
   mode, lang, firstName, lastName, phone, email,
-  day, month, year, branch, comment,
+  day, month, year, branch, comment, resumeUrl,
 }: ApplicationSubmissionProps) => {
   const fullName = [lastName, firstName].filter(Boolean).join(' ') || '—'
   const birth = [day, month, year].filter(Boolean).join('.') || '—'
@@ -52,6 +53,16 @@ const ApplicationSubmissionEmail = ({
           <Row label="Статус" value={labelFor(mode)} />
           {mode === 'military' && <Row label="Рід військ" value={branch} />}
           <Row label="Коментар" value={comment} />
+          {resumeUrl && (
+            <Section style={row}>
+              <Text style={rowLabel}>РЕЗЮМЕ</Text>
+              <Text style={rowValue}>
+                <a href={resumeUrl} style={{ color: '#4f46e5', textDecoration: 'underline' }}>
+                  Відкрити резюме
+                </a>
+              </Text>
+            </Section>
+          )}
           <Hr style={hr} />
           <Text style={meta}>Мова форми: {lang === 'en' ? 'EN' : 'UA'}</Text>
         </Container>

@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
-import { trackFormSubmit } from '@/lib/gtag';
+import { trackFormSubmit, trackFileUpload } from '@/lib/gtag';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -67,20 +67,61 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
     },
   });
 
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState<string | null>(null);
+
+  const acceptedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  const maxFileSize = 5 * 1024 * 1024; // 5 MB
+
+  const handleFileChange = (file: File | null) => {
+    setResumeError(null);
+    if (!file) {
+      setResumeFile(null);
+      return;
+    }
+    if (!acceptedFileTypes.includes(file.type)) {
+      setResumeError(tr.errors.fileType);
+      setResumeFile(null);
+      return;
+    }
+    if (file.size > maxFileSize) {
+      setResumeError(tr.errors.fileSize);
+      setResumeFile(null);
+      return;
+    }
+    setResumeFile(file);
+    trackFileUpload(file.name, file.type);
+  };
+
   const onSubmit = async (values: z.infer<typeof military>) => {
     try {
+      let resumeUrl: string | undefined;
+      if (resumeFile) {
+        const uploadId = crypto.randomUUID();
+        const ext = resumeFile.name.split('.').pop() || '';
+        const safeName = resumeFile.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+        const filePath = `${uploadId}-${safeName}`;
+        const { error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(filePath, resumeFile, { contentType: resumeFile.type });
+        if (uploadError) throw uploadError;
+        const { data: urlData } = supabase.storage.from('resumes').getPublicUrl(filePath);
+        resumeUrl = urlData.publicUrl;
+      }
+
       const id = crypto.randomUUID();
       const { error } = await supabase.functions.invoke('send-transactional-email', {
         body: {
           templateName: 'application-submission',
           idempotencyKey: `application-${id}`,
-          templateData: { mode, lang, ...values },
+          templateData: { mode, lang, resumeUrl, ...values },
         },
       });
       if (error) throw error;
       trackFormSubmit('application');
       toast.success(tr.success);
       form.reset();
+      setResumeFile(null);
     } catch (e) {
       console.error('application submit failed', e);
       toast.error(tr.errorSubmit);
@@ -189,6 +230,23 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
             <FormMessage />
           </FormItem>
         )} />
+
+        <FormItem>
+          <FormLabel>{tr.fields.resume}</FormLabel>
+          <FormControl>
+            <Input
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              onChange={(e) => handleFileChange(e.target.files?.[0] || null)}
+            />
+          </FormControl>
+          {resumeFile && (
+            <p className="text-sm text-muted-foreground mt-1">{resumeFile.name}</p>
+          )}
+          {resumeError && (
+            <p className="text-sm font-medium text-destructive mt-1">{resumeError}</p>
+          )}
+        </FormItem>
 
         <FormField control={form.control} name="consent" render={({ field }) => (
           <FormItem>
