@@ -13,6 +13,7 @@ import Blog from "./pages/Blog";
 import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import GATracker from "./components/GATracker";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <GATracker />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/vacancies" element={<Vacancies />} />
