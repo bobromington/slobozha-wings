@@ -67,6 +67,32 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
     },
   });
 
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState<string | null>(null);
+
+  const acceptedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  const maxFileSize = 5 * 1024 * 1024; // 5 MB
+
+  const handleFileChange = (file: File | null) => {
+    setResumeError(null);
+    if (!file) {
+      setResumeFile(null);
+      return;
+    }
+    if (!acceptedFileTypes.includes(file.type)) {
+      setResumeError(tr.errors.fileType);
+      setResumeFile(null);
+      return;
+    }
+    if (file.size > maxFileSize) {
+      setResumeError(tr.errors.fileSize);
+      setResumeFile(null);
+      return;
+    }
+    setResumeFile(file);
+    trackFileUpload(file.name, file.type);
+  };
+
   const onSubmit = async (values: z.infer<typeof military>) => {
     try {
       const id = crypto.randomUUID();
