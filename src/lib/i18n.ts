@@ -81,6 +81,7 @@ export const translations = {
         branch: 'Рід військ',
         branchPlaceholder: 'Виберіть рід військ',
         comment: 'Коментар',
+        resume: 'Резюме / CV',
         consent: 'Я даю згоду на обробку моїх персональних даних',
       },
       branches: {
