@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
+import { trackCTA } from '@/lib/gtag';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -141,10 +142,10 @@ export default function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
           >
-            <Link to="/vacancies">
+            <Link to="/vacancies" onClick={() => trackCTA('hero_join', 'hero')}>
               <Button variant="hero" size="xl">{tr.hero.joinBtn}</Button>
             </Link>
-            <Link to="/fund">
+            <Link to="/fund" onClick={() => trackCTA('hero_support', 'hero')}>
               <Button variant="heroOutline" size="xl">{tr.hero.supportBtn}</Button>
             </Link>
           </motion.div>
@@ -263,7 +264,7 @@ export default function Index() {
             <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.recruit.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.recruit.title}</h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.recruit.description}</p>
-            <Link to="/vacancies">
+            <Link to="/vacancies" onClick={() => trackCTA('recruit_vacancies', 'recruit_section')}>
               <Button variant="hero" size="lg">{tr.recruit.btn}</Button>
             </Link>
           </motion.div>
@@ -282,7 +283,7 @@ export default function Index() {
             <p className="font-heading text-sm tracking-[0.3em] text-primary-bright mb-3">{tr.support.subtitle}</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">{tr.support.title}</h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-8">{tr.support.description}</p>
-            <Link to="/fund">
+            <Link to="/fund" onClick={() => trackCTA('support_fund', 'support_section')}>
               <Button variant="hero" size="lg">{tr.support.btn}</Button>
             </Link>
           </motion.div>

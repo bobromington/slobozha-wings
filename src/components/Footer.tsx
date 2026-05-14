@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
+import { trackSocial } from '@/lib/gtag';
 import logo from '@/assets/logo.png';
 import slobodaSamosud from '@/assets/sloboda-samosud-hor.png';
 
@@ -62,6 +63,7 @@ export default function Footer() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackSocial(s.name)}
                   className="w-9 h-9 flex items-center justify-center border border-border rounded text-xs font-heading text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 >
                   {s.icon}

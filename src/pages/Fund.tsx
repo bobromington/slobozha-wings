@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
+import { trackCTA } from '@/lib/gtag';
 import pattern from '@/assets/sloboda-pattern.png';
 
 export default function Fund() {
@@ -89,6 +90,7 @@ export default function Fund() {
                   href="https://send.monobank.ua/jar/3MvSNZbPmH"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackCTA('fund_donate', 'fund_page')}
                 >
                   {lang === 'ua' ? 'Зробити донат' : 'Make a Donation'}
                 </a>
