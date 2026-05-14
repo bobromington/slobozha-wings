@@ -202,6 +202,8 @@ export const translations = {
         date: 'Invalid date',
         age: 'Age must be between 18 and 65',
         consent: 'Consent is required',
+        fileSize: 'File too large. Maximum 5 MB',
+        fileType: 'Allowed formats: PDF, DOC, DOCX',
       },
     },
   },
