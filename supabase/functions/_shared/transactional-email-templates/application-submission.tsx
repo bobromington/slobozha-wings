@@ -16,6 +16,7 @@ interface ApplicationSubmissionProps {
   year?: string
   branch?: string
   comment?: string
+  resumeUrl?: string
 }
 
 const labelFor = (mode?: string) =>
