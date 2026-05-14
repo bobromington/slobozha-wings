@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 lg:[grid-template-columns:1.5fr_1fr_1fr_1fr] items-start">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Слобода" className="h-12 w-auto" />
-              <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-10 w-auto" />
+              <img src={logo} alt="Sloboda Unit Logo" className="h-12 w-auto" />
+              <img src={slobodaSamosud} alt="Sloboda Samosud Team wordmark" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {lang === 'ua' ? (

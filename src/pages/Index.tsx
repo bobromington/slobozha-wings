@@ -6,6 +6,7 @@ import { t } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import logo from '@/assets/logo.png';
 import bgFire from '@/assets/bg-fire-new.png';
 import bgRed from '@/assets/bg-red-new.png';
@@ -61,6 +62,11 @@ export default function Index() {
 
   return (
     <div className="min-h-screen relative">
+      <Seo
+        title="СЛОБОДА — Батальйон безпілотних систем"
+        description="Офіційний сайт Батальйону безпілотних систем «Слобода», 11 Бригада НГУ. Рекрутинг, підтримка фонду, новини підрозділу."
+        path="/"
+      />
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
@@ -81,9 +87,10 @@ export default function Index() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         
         <div className="relative z-10 text-center px-4">
+          <h1 className="sr-only">СЛОБОДА — Батальйон безпілотних систем, 11 Бригада НГУ</h1>
           <motion.img
             src={logo}
-            alt="Слобода"
+            alt="Sloboda Unit Logo"
             className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -99,7 +106,7 @@ export default function Index() {
           </motion.p>
           <motion.img
             src={slobodaWide}
-            alt="СЛОБОДА"
+            alt="Sloboda wordmark"
             className="max-w-[85%] md:max-w-xl lg:max-w-2xl h-auto mx-auto mb-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -222,7 +229,7 @@ export default function Index() {
 
       {/* Key Directions — white/drone on right, text on left */}
       <section className="relative h-[420px] md:h-[500px] overflow-hidden">
-        <img src={bgWhite} alt="БПЛА" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={bgWhite} alt="White UAV drone" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="relative z-10 h-full flex items-center">
           <motion.div

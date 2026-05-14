@@ -1,0 +1,12 @@
+# Sloboda — Батальйон безпілотних систем
+
+> Official site of the "Sloboda" UAV battalion, part of the 11th Brigade of the National Guard of Ukraine. Recruiting, support fund, news.
+
+## Pages
+
+- [Home](/): Overview of the unit, mission, and key directions.
+- [Vacancies](/vacancies): Open positions for UAV operators, technicians, analysts, and support roles.
+- [About](/about): History and structure of the Sloboda airspace cover detachment.
+- [Fund](/fund): How to support the unit financially.
+- [News](/news): Operational and unit news updates.
+- [Blog](/blog): Articles and longer-form posts from the unit.

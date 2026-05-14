@@ -136,7 +136,7 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
             <FormField control={form.control} name="day" render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input {...field} inputMode="numeric" maxLength={2} placeholder="DD"
+                  <Input {...field} inputMode="numeric" maxLength={2} placeholder="DD" aria-label="Day of birth"
                     onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 2))} />
                 </FormControl>
                 <FormMessage />
@@ -145,7 +145,7 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
             <FormField control={form.control} name="month" render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input {...field} inputMode="numeric" maxLength={2} placeholder="MM"
+                  <Input {...field} inputMode="numeric" maxLength={2} placeholder="MM" aria-label="Month of birth"
                     onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 2))} />
                 </FormControl>
               </FormItem>
@@ -153,7 +153,7 @@ function ApplicationFormInner({ mode }: { mode: FormMode }) {
             <FormField control={form.control} name="year" render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input {...field} inputMode="numeric" maxLength={4} placeholder="YYYY"
+                  <Input {...field} inputMode="numeric" maxLength={4} placeholder="YYYY" aria-label="Year of birth"
                     onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 4))} />
                 </FormControl>
               </FormItem>

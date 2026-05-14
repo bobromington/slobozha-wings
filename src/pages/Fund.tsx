@@ -3,6 +3,7 @@ import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import pattern from '@/assets/sloboda-pattern.png';
 
@@ -12,6 +13,11 @@ export default function Fund() {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <Seo
+        title="Підтримати — Батальйон Слобода"
+        description="Підтримайте Батальйон безпілотних систем «Слобода»: реквізити фонду та способи допомоги обладнанням і ресурсами."
+        path="/fund"
+      />
       <motion.div
         aria-hidden
         className="fixed inset-0 z-0 will-change-transform"

@@ -25,8 +25,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Слобода" className="h-[38px] md:h-[53px] w-auto" />
-          <img src={slobodaSamosud} alt="СЛОБОДА Samosud Team" className="h-[30px] md:h-[42px] w-auto -translate-y-[1px] md:-translate-y-[1px]" />
+          <img src={logo} alt="Sloboda Unit Logo" className="h-[38px] md:h-[53px] w-auto" />
+          <img src={slobodaSamosud} alt="Sloboda Samosud Team wordmark" className="h-[30px] md:h-[42px] w-auto -translate-y-[1px] md:-translate-y-[1px]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
@@ -53,6 +53,8 @@ export default function Header() {
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden text-foreground"
+            aria-label={open ? (lang === 'ua' ? 'Закрити меню' : 'Close menu') : (lang === 'ua' ? 'Відкрити меню' : 'Open menu')}
+            aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>

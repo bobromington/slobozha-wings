@@ -3,6 +3,7 @@ import { useParallaxY } from '@/hooks/useParallaxY';
 import { useLanguage } from '@/lib/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import logo from '@/assets/logo.png';
 import samosudov from '@/assets/samosudov-cropped.png';
 
@@ -45,6 +46,11 @@ export default function About() {
 
   return (
     <div className="min-h-screen relative">
+      <Seo
+        title="Про нас — Батальйон Слобода"
+        description="Історія, структура та командир Загону прикриття повітряного простору «Слобода» 11 Бригади Національної гвардії України."
+        path="/about"
+      />
       {/* Fixed video background with parallax */}
       <motion.video
         autoPlay muted loop playsInline
