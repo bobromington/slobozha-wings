@@ -1,10 +1,16 @@
-## Заміна favicon
+## Plan: Update brigade name in footer
 
-1. Скопіювати завантажене зображення `user-uploads://СЛОБОДА-SAMOSUD_TEAM-2.png` у `public/favicon.png`.
-2. Видалити старий `public/favicon.ico`, щоб браузер не підтягував його за замовчуванням.
-3. Оновити `index.html` — додати/замінити тег у `<head>`:
-   ```html
-   <link rel="icon" href="/favicon.png" type="image/png">
-   ```
+### Goal
+Replace the abbreviated brigade name in the site footer with the full official name including Mykhailo Hrushevsky.
 
-Після цього вкладка браузера показуватиме новий логотип. Може знадобитись жорстке оновлення сторінки (Ctrl+Shift+R), щоб побачити зміну.
+### Changes
+- **File:** `src/components/Footer.tsx`
+- **Ukrainian text:** change `11 Бригада НГУ` → `11 бригада імені Михайла Грушевського Національної гвардії України`
+- **English text:** change `11th Brigade NGU` → `11th Brigade named after Mykhailo Hrushevsky of the National Guard of Ukraine`
+
+### Out of scope
+- Meta descriptions and hidden headings in `src/pages/Index.tsx` that also contain the abbreviated name are **not** changed unless explicitly requested.
+- `src/pages/About.tsx` description is **not** changed unless explicitly requested.
+
+### Technical details
+No new dependencies. No database changes. Pure text edit in one React component.

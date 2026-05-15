@@ -28,9 +28,9 @@ export default function Footer() {
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {lang === 'ua' ? (
-                <>Загін прикриття повітряного простору.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11 Бригада НГУ.</a></>
+                <>Загін прикриття повітряного простору.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11 бригада імені Михайла Грушевського Національної гвардії України.</a></>
               ) : (
-                <>Airspace Cover Detachment.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11th Brigade NGU.</a></>
+                <>Airspace Cover Detachment.<br /><a href="https://11brigade.com.ua/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-bright transition-colors">11th Brigade named after Mykhailo Hrushevsky of the National Guard of Ukraine.</a></>
               )}
             </p>
           </div>
