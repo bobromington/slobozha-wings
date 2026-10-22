@@ -30,3 +30,44 @@ export const historyParagraphsEN = [
   'Today, the airspace cover detachment of the 11th M. Hrushevsky Brigade of the National Guard of Ukraine is an important component of the regional security system. It combines experience, modern technology, and the professionalism of its servicemen, allowing it to confidently perform its missions.',
   'The unit continues to evolve. Constant improvement of structure, the introduction of new solutions, and capability growth remain key directions. The detachment continues to provide reliable airspace cover, demonstrating readiness to perform missions in any conditions.',
 ];
+
+export const commanderDefaults = {
+  nameUA: 'Тимур Самосудов',
+  nameEN: 'Tymur Samosudov',
+  roleUA: 'Командир загону',
+  roleEN: 'Detachment Commander',
+  bioUA: [
+    'Тимур Самосудов — командир загону прикриття повітряного простору спеціального призначення Національної гвардії України.',
+    'З початком повномасштабного вторгнення у березні 2022 року він добровільно став до строю. Свій бойовий шлях розпочав із базових завдань — працював водієм, забезпечуючи підрозділ на передовій, і паралельно шукав можливості бути максимально ефективним у бойових умовах.',
+    'Згодом перейшов до роботи з безпілотними системами та став одним із тих, хто фактично з нуля формував напрямок ударних дронів. Завдяки практичному досвіду, ініціативі та здатності швидко ухвалювати рішення, Самосудов очолив підрозділ, який сьогодні виконує завдання на найскладніших ділянках фронту.',
+    'Під його керівництвом команда спеціалізується на точковому знищенні техніки та живої сили противника. Підрозділ демонструє високу результативність, поєднуючи технологічність, дисципліну та постійну адаптацію до умов сучасної війни.',
+    'Його підхід — це особиста залученість, відповідальність за результат і робота пліч-о-пліч із бійцями.',
+  ].join('\n\n'),
+  bioEN: [
+    'Tymur Samosudov is the commander of the special-purpose airspace cover detachment of the National Guard of Ukraine.',
+    'When the full-scale invasion began in March 2022, he voluntarily enlisted. He started with basic tasks — working as a driver supporting the unit on the front line, while looking for ways to be maximally effective in combat.',
+    'He later transitioned to working with unmanned systems and became one of those who built the strike drone capability from scratch. Through practical experience, initiative, and quick decision-making, Samosudov took command of a unit that now operates on the most challenging frontline sectors.',
+    'Under his leadership, the team specializes in precision strikes against enemy equipment and personnel, combining technology, discipline, and constant adaptation to modern warfare.',
+    'His approach is personal involvement, accountability for results, and working shoulder to shoulder with his soldiers.',
+  ].join('\n\n'),
+};
+
+export const aboutDefaults = {
+  historyUA: historyParagraphsUA.join('\n\n'),
+  historyEN: historyParagraphsEN.join('\n\n'),
+};
+
+export const fundDefaults = {
+  card: '5375 4112 2192 1567',
+  iban: '',
+  recipient: '',
+  jarUrl: 'https://send.monobank.ua/jar/3MvSNZbPmH',
+};
+
+export const vacancyDefaults = [
+  { category_ua: 'Оператори БПЛА', category_en: 'UAV Operators', items: [['Оператор FPV-дрона', 'FPV Drone Operator'], ['Оператор розвідувального БПЛА', 'Reconnaissance UAV Operator'], ['Оператор бомбардувального БПЛА', 'Bomber UAV Operator']] },
+  { category_ua: 'Технічні спеціалісти', category_en: 'Technical Specialists', items: [['Технік з обслуговування БПЛА', 'UAV Maintenance Technician'], ['Інженер-конструктор', 'Design Engineer'], ['Фахівець з ремонту', 'Repair Specialist']] },
+  { category_ua: 'Аналітики', category_en: 'Analysts', items: [['Аналітик розвідданих', 'Intelligence Analyst'], ['Спеціаліст з обробки даних', 'Data Processing Specialist']] },
+  { category_ua: 'IT-спеціалісти', category_en: 'IT Specialists', items: [['Розробник ПЗ для БПЛА', 'UAV Software Developer'], ['Системний адміністратор', 'System Administrator']] },
+  { category_ua: 'Забезпечення', category_en: 'Support', items: [['Логіст', 'Logistics Specialist'], ['Фахівець із забезпечення', 'Supply Specialist']] },
+];
