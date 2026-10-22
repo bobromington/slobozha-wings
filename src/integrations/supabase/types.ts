@@ -14,6 +14,21 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_invites: {
+        Row: {
+          created_at: string
+          email: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
@@ -101,6 +116,60 @@ export type Database = {
         }
         Relationships: []
       }
+      news: {
+        Row: {
+          body_en: string
+          body_ua: string
+          created_at: string
+          id: string
+          image_url: string | null
+          published: boolean
+          published_at: string
+          title_en: string
+          title_ua: string
+        }
+        Insert: {
+          body_en?: string
+          body_ua?: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          published_at?: string
+          title_en?: string
+          title_ua?: string
+        }
+        Update: {
+          body_en?: string
+          body_ua?: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          published_at?: string
+          title_en?: string
+          title_ua?: string
+        }
+        Relationships: []
+      }
+      site_content: {
+        Row: {
+          data: Json
+          key: string
+          updated_at: string
+        }
+        Insert: {
+          data?: Json
+          key: string
+          updated_at?: string
+        }
+        Update: {
+          data?: Json
+          key?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
@@ -125,6 +194,57 @@ export type Database = {
         }
         Relationships: []
       }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      vacancies: {
+        Row: {
+          active: boolean
+          category_en: string
+          category_ua: string
+          created_at: string
+          id: string
+          sort_order: number
+          title_en: string
+          title_ua: string
+        }
+        Insert: {
+          active?: boolean
+          category_en?: string
+          category_ua?: string
+          created_at?: string
+          id?: string
+          sort_order?: number
+          title_en?: string
+          title_ua?: string
+        }
+        Update: {
+          active?: boolean
+          category_en?: string
+          category_ua?: string
+          created_at?: string
+          id?: string
+          sort_order?: number
+          title_en?: string
+          title_ua?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -138,6 +258,13 @@ export type Database = {
       enqueue_email: {
         Args: { payload: Json; queue_name: string }
         Returns: number
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
       }
       move_to_dlq: {
         Args: {
