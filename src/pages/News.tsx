@@ -32,6 +32,7 @@ const newsItems = [
 
 export default function News() {
   const { lang } = useLanguage();
+  const items = useNewsItems(lang);
   const bgY = useParallaxY(1000, '6%');
 
   return (
