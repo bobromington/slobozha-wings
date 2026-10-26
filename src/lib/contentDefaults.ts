@@ -61,7 +61,7 @@ export const fundDefaults = {
   card: '5375 4112 2192 1567',
   iban: '',
   recipient: '',
-  jarUrl: 'https://send.monobank.ua/jar/3MvSNZbPmH',
+  jarUrl: '',
 };
 
 export const vacancyDefaults = [
