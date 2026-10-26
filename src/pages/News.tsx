@@ -8,6 +8,21 @@ import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
 import newsSting from '@/assets/news-sting.png';
 import pattern from '@/assets/sloboda-pattern.png';
+import { usePublishedNews, toParagraphs } from '@/lib/content';
+
+export function useNewsItems(lang: 'ua' | 'en') {
+  const q = usePublishedNews();
+  const placeholder = lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon';
+  if (q.data && q.data.length > 0) {
+    return q.data.map((n) => ({
+      id: n.id,
+      title: (lang === 'ua' ? n.title_ua : n.title_en) || n.title_ua,
+      body: (lang === 'ua' ? n.body_ua : n.body_en) || n.body_ua,
+      image: n.image_url || newsSting,
+    }));
+  }
+  return newsItems.map((n) => ({ id: String(n.id), title: placeholder, body: lang === 'ua' ? n.descUA : n.descEN, image: n.image }));
+}
 
 const newsItems = [
   { id: 1, date: '2024-03-15', titleUA: 'Успішна операція на східному напрямку', titleEN: 'Successful operation on the eastern front', image: bgFire, descUA: 'Підрозділ успішно виконав завдання з повітряної розвідки та ураження ворожих позицій.', descEN: 'The unit successfully completed aerial reconnaissance and strike missions against enemy positions.' },
@@ -58,7 +73,7 @@ export default function News() {
             </motion.h1>
 
             <div className="space-y-8">
-              {newsItems.map((n, i) => (
+              {items.map((n, i) => (
                 <motion.article
                   key={n.id}
                   className="bg-card border border-border rounded overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-0"
@@ -66,13 +81,15 @@ export default function News() {
                   viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 >
                   <div className="h-48 md:h-auto">
-                    <img src={n.image} alt="" className="w-full h-full object-cover" />
+                    <img src={n.image} alt={n.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="md:col-span-2 p-6 flex flex-col justify-center">
                     <h2 className="font-heading text-xl font-bold text-foreground mt-2 mb-3">
-                      {lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon'}
+                      {n.title}
                     </h2>
-                    <p className="text-muted-foreground">{lang === 'ua' ? n.descUA : n.descEN}</p>
+                    <div className="text-muted-foreground space-y-3">
+                      {toParagraphs(n.body).map((p, k) => <p key={k}>{p}</p>)}
+                    </div>
                   </div>
                 </motion.article>
               ))}
