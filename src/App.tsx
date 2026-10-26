@@ -12,6 +12,8 @@ import News from "./pages/News";
 import Blog from "./pages/Blog";
 import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
+import ResetPassword from "./pages/ResetPassword";
 import ScrollToTop from "./components/ScrollToTop";
 import GATracker from "./components/GATracker";
 
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/news" element={<News />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
