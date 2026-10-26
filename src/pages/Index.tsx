@@ -17,7 +17,6 @@ import newsSting from '@/assets/news-sting.png';
 import slobodaWide from '@/assets/sloboda-wide.png';
 import samosudov from '@/assets/samosudov.png';
 import samosudTeam from '@/assets/samosud-team.png';
-import { usePublishedNews, useSiteContent } from '@/lib/content';
 
 const newsData = [
   {
@@ -46,11 +45,6 @@ const newsData = [
 export default function Index() {
   const { lang } = useLanguage();
   const tr = t(lang);
-  const cmd = useSiteContent('commander');
-  const { data: dbNews } = usePublishedNews();
-  const newsCards = dbNews && dbNews.length
-    ? dbNews.slice(0, 3).map((n) => ({ id: n.id, image: n.image_url || newsSting, title: lang === 'ua' ? n.title_ua : n.title_en || n.title_ua }))
-    : newsData.map((n) => ({ id: String(n.id), image: n.image, title: lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon' }));
   const prefersReducedMotion = useReducedMotion();
   const bgY = useParallaxY(1500, '8%');
   const fadeUp = prefersReducedMotion
@@ -223,7 +217,7 @@ export default function Index() {
               />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
                 <h3 className="font-heading text-3xl md:text-5xl font-bold text-white mb-2">
-                  {lang === 'ua' ? cmd.nameUA : cmd.nameEN}
+                  {lang === 'ua' ? 'Тимур Самосудов' : 'Tymur Samosudov'}
                 </h3>
                 <p className="font-heading text-sm md:text-base tracking-widest text-primary-bright uppercase">
                   {lang === 'ua' ? 'Командир підрозділу' : 'Unit Commander'}
@@ -308,7 +302,7 @@ export default function Index() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {newsCards.map((news, i) => (
+            {newsData.map((news, i) => (
               <motion.article
                 key={news.id}
                 className="bg-card border border-border rounded overflow-hidden group cursor-pointer"
@@ -317,13 +311,13 @@ export default function Index() {
                 <div className="h-48 overflow-hidden">
                   <img
                     src={news.image}
-                    alt={news.title}
+                    alt={lang === 'ua' ? news.titleUA : news.titleEN}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">
                   <h3 className="font-heading text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors">
-                    {news.title}
+                    {lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon'}
                   </h3>
                 </div>
               </motion.article>

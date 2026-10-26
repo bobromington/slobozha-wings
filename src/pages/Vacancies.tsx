@@ -8,16 +8,27 @@ import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import ApplicationForm from '@/components/ApplicationForm';
 import { Button } from '@/components/ui/button';
-import { useActiveVacancies, groupVacancies } from '@/lib/content';
-import { vacancyDefaults } from '@/lib/contentDefaults';
+
+const vacancyDataUA = [
+  { category: 'Оператори БПЛА', positions: ['Оператор FPV-дрона', 'Оператор розвідувального БПЛА', 'Оператор бомбардувального БПЛА'] },
+  { category: 'Технічні спеціалісти', positions: ['Технік з обслуговування БПЛА', 'Інженер-конструктор', 'Фахівець з ремонту'] },
+  { category: 'Аналітики', positions: ['Аналітик розвідданих', 'Спеціаліст з обробки даних'] },
+  { category: 'IT-спеціалісти', positions: ['Розробник ПЗ для БПЛА', 'Системний адміністратор'] },
+  { category: 'Забезпечення', positions: ['Логіст', 'Фахівець із забезпечення'] },
+];
+
+const vacancyDataEN = [
+  { category: 'UAV Operators', positions: ['FPV Drone Operator', 'Reconnaissance UAV Operator', 'Bomber UAV Operator'] },
+  { category: 'Technical Specialists', positions: ['UAV Maintenance Technician', 'Design Engineer', 'Repair Specialist'] },
+  { category: 'Analysts', positions: ['Intelligence Analyst', 'Data Processing Specialist'] },
+  { category: 'IT Specialists', positions: ['UAV Software Developer', 'System Administrator'] },
+  { category: 'Support', positions: ['Logistics Specialist', 'Supply Specialist'] },
+];
 
 export default function Vacancies() {
   const { lang } = useLanguage();
   const tr = t(lang);
-  const { data: rows } = useActiveVacancies();
-  const data = rows
-    ? groupVacancies(rows, lang)
-    : vacancyDefaults.map((c) => ({ category: lang === 'ua' ? c.category_ua : c.category_en, positions: c.items.map((p) => (lang === 'ua' ? p[0] : p[1])) }));
+  const data = lang === 'ua' ? vacancyDataUA : vacancyDataEN;
   const bgY = useParallaxY(1500, '-8%');
   const [videoReady, setVideoReady] = useState(false);
 

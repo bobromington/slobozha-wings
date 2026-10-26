@@ -8,7 +8,6 @@ import bgFire from '@/assets/bg-fire.png';
 import bgRed from '@/assets/bg-red.png';
 import newsSting from '@/assets/news-sting.png';
 import pattern from '@/assets/sloboda-pattern.png';
-import { usePublishedNews } from '@/lib/content';
 
 const newsItems = [
   { id: 1, date: '2024-03-15', titleUA: 'Успішна операція на східному напрямку', titleEN: 'Successful operation on the eastern front', image: bgFire, descUA: 'Підрозділ успішно виконав завдання з повітряної розвідки та ураження ворожих позицій.', descEN: 'The unit successfully completed aerial reconnaissance and strike missions against enemy positions.' },
@@ -19,10 +18,6 @@ const newsItems = [
 export default function News() {
   const { lang } = useLanguage();
   const bgY = useParallaxY(1000, '6%');
-  const { data: dbNews } = usePublishedNews();
-  const items = dbNews && dbNews.length
-    ? dbNews.map((n) => ({ id: n.id, image: n.image_url || newsSting, title: lang === 'ua' ? n.title_ua : n.title_en || n.title_ua, desc: lang === 'ua' ? n.body_ua : n.body_en || n.body_ua }))
-    : newsItems.map((n) => ({ id: String(n.id), image: n.image, title: lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon', desc: lang === 'ua' ? n.descUA : n.descEN }));
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -63,7 +58,7 @@ export default function News() {
             </motion.h1>
 
             <div className="space-y-8">
-              {items.map((n, i) => (
+              {newsItems.map((n, i) => (
                 <motion.article
                   key={n.id}
                   className="bg-card border border-border rounded overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-0"
@@ -75,9 +70,9 @@ export default function News() {
                   </div>
                   <div className="md:col-span-2 p-6 flex flex-col justify-center">
                     <h2 className="font-heading text-xl font-bold text-foreground mt-2 mb-3">
-                      {n.title}
+                      {lang === 'ua' ? 'Підрозділ працює — новини незабаром' : 'The unit is at work — news coming soon'}
                     </h2>
-                    <p className="text-muted-foreground whitespace-pre-line">{n.desc}</p>
+                    <p className="text-muted-foreground">{lang === 'ua' ? n.descUA : n.descEN}</p>
                   </div>
                 </motion.article>
               ))}
