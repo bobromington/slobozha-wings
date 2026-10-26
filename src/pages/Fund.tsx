@@ -7,9 +7,11 @@ import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { trackDonate } from '@/lib/gtag';
 import pattern from '@/assets/sloboda-pattern.png';
+import { useSiteContent } from '@/lib/content';
 
 export default function Fund() {
   const { lang } = useLanguage();
+  const fund = useSiteContent('fund');
   const bgY = useParallaxY(1000, '6%');
 
   return (
@@ -80,21 +82,29 @@ export default function Fund() {
                 {lang === 'ua' ? 'Реквізити' : 'Bank Details'}
               </h2>
               <div className="space-y-2 text-muted-foreground text-sm font-mono">
-                <p>{lang === 'ua' ? 'Картка' : 'Card'}: 5375 4112 2192 1567</p>
+                {fund.card && <p>{lang === 'ua' ? 'Картка' : 'Card'}: {fund.card}</p>}
+                {fund.iban && <p>IBAN: {fund.iban}</p>}
+                {fund.recipient && <p>{lang === 'ua' ? 'Отримувач' : 'Recipient'}: {fund.recipient}</p>}
               </div>
             </div>
 
             <div className="text-center pt-4">
-              <Button variant="hero" size="xl" asChild>
-                <a
-                  href="https://send.monobank.ua/jar/3MvSNZbPmH"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackDonate('https://send.monobank.ua/jar/3MvSNZbPmH', 'fund_page')}
-                >
+              {fund.jarUrl ? (
+                <Button variant="hero" size="xl" asChild>
+                  <a
+                    href={fund.jarUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackDonate(fund.jarUrl, 'fund_page')}
+                  >
+                    {lang === 'ua' ? 'Зробити донат' : 'Make a Donation'}
+                  </a>
+                </Button>
+              ) : (
+                <Button variant="hero" size="xl" type="button">
                   {lang === 'ua' ? 'Зробити донат' : 'Make a Donation'}
-                </a>
-              </Button>
+                </Button>
+              )}
             </div>
           </motion.div>
         </div>
