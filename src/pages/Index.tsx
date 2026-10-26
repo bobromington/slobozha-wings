@@ -333,7 +333,6 @@ export default function Index() {
                   </h3>
                 </div>
                 </Link>
-                </div>
               </motion.article>
             ))}
           </div>
