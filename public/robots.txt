@@ -14,3 +14,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sloboda.army/sitemap.xml
+
+Disallow: /admin
